@@ -14,6 +14,9 @@
 		23860B1822A7ED21006DA385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23860B1622A7ED21006DA385 /* LaunchScreen.storyboard */; };
 		23860B2322A7ED21006DA385 /* GuildWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B2222A7ED21006DA385 /* GuildWarTests.swift */; };
 		23860B2E22A7ED21006DA385 /* GuildWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B2D22A7ED21006DA385 /* GuildWarUITests.swift */; };
+		45D95D4C3E1916204EAAF059 /* Pods_GuildWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB021C74B09936E8266896 /* Pods_GuildWarUITests.framework */; };
+		B313E15A741D341BF82941B1 /* Pods_GuildWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A5998B062FA62F0767309 /* Pods_GuildWarTests.framework */; };
+		D42266FFF376836D642BF8BF /* Pods_GuildWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17102C79F227DEB56B776F49 /* Pods-GuildWar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWar.debug.xcconfig"; path = "Target Support Files/Pods-GuildWar/Pods-GuildWar.debug.xcconfig"; sourceTree = "<group>"; };
 		23860B0A22A7ED1B006DA385 /* GuildWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuildWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23860B0D22A7ED1B006DA385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23860B0F22A7ED1B006DA385 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		23860B2922A7ED21006DA385 /* GuildWarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuildWarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23860B2D22A7ED21006DA385 /* GuildWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildWarUITests.swift; sourceTree = "<group>"; };
 		23860B2F22A7ED21006DA385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF292637D5173736D160076 /* Pods-GuildWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWar.release.xcconfig"; path = "Target Support Files/Pods-GuildWar/Pods-GuildWar.release.xcconfig"; sourceTree = "<group>"; };
+		88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-GuildWarUITests/Pods-GuildWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA0A5998B062FA62F0767309 /* Pods_GuildWarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23D4308988BC941838E9CCE /* Pods-GuildWarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarUITests.release.xcconfig"; path = "Target Support Files/Pods-GuildWarUITests/Pods-GuildWarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CBCB021C74B09936E8266896 /* Pods_GuildWarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D51C2A33FC9B536AF98537AA /* Pods-GuildWarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarTests.release.xcconfig"; path = "Target Support Files/Pods-GuildWarTests/Pods-GuildWarTests.release.xcconfig"; sourceTree = "<group>"; };
+		FDC838A939EF43303D799C20 /* Pods-GuildWarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarTests.debug.xcconfig"; path = "Target Support Files/Pods-GuildWarTests/Pods-GuildWarTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42266FFF376836D642BF8BF /* Pods_GuildWar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B313E15A741D341BF82941B1 /* Pods_GuildWarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D95D4C3E1916204EAAF059 /* Pods_GuildWarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				23860B2122A7ED21006DA385 /* GuildWarTests */,
 				23860B2C22A7ED21006DA385 /* GuildWarUITests */,
 				23860B0B22A7ED1B006DA385 /* Products */,
+				3ADAC7100FB6CA40C558BEE2 /* Pods */,
+				DA94F6AA3F55C79A3D6965A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,30 @@
 			path = GuildWarUITests;
 			sourceTree = "<group>";
 		};
+		3ADAC7100FB6CA40C558BEE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17102C79F227DEB56B776F49 /* Pods-GuildWar.debug.xcconfig */,
+				7FF292637D5173736D160076 /* Pods-GuildWar.release.xcconfig */,
+				FDC838A939EF43303D799C20 /* Pods-GuildWarTests.debug.xcconfig */,
+				D51C2A33FC9B536AF98537AA /* Pods-GuildWarTests.release.xcconfig */,
+				88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */,
+				B23D4308988BC941838E9CCE /* Pods-GuildWarUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA94F6AA3F55C79A3D6965A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */,
+				AA0A5998B062FA62F0767309 /* Pods_GuildWarTests.framework */,
+				CBCB021C74B09936E8266896 /* Pods_GuildWarUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23860B3222A7ED21006DA385 /* Build configuration list for PBXNativeTarget "GuildWar" */;
 			buildPhases = (
+				2A4CA022CD7AF7B37F518C33 /* [CP] Check Pods Manifest.lock */,
 				23860B0622A7ED1B006DA385 /* Sources */,
 				23860B0722A7ED1B006DA385 /* Frameworks */,
 				23860B0822A7ED1B006DA385 /* Resources */,
+				BF590BB1147D53C8412AB4F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23860B3522A7ED21006DA385 /* Build configuration list for PBXNativeTarget "GuildWarTests" */;
 			buildPhases = (
+				0E58B49DBD23B92B9FFE3B24 /* [CP] Check Pods Manifest.lock */,
 				23860B1A22A7ED21006DA385 /* Sources */,
 				23860B1B22A7ED21006DA385 /* Frameworks */,
 				23860B1C22A7ED21006DA385 /* Resources */,
@@ -167,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23860B3822A7ED21006DA385 /* Build configuration list for PBXNativeTarget "GuildWarUITests" */;
 			buildPhases = (
+				0E85AF5009D4F67FD603767A /* [CP] Check Pods Manifest.lock */,
 				23860B2522A7ED21006DA385 /* Sources */,
 				23860B2622A7ED21006DA385 /* Frameworks */,
 				23860B2722A7ED21006DA385 /* Resources */,
@@ -250,6 +295,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E58B49DBD23B92B9FFE3B24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuildWarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E85AF5009D4F67FD603767A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuildWarUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A4CA022CD7AF7B37F518C33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuildWar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF590BB1147D53C8412AB4F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuildWar/Pods-GuildWar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GuildWar/Pods-GuildWar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23860B0622A7ED1B006DA385 /* Sources */ = {
@@ -430,6 +570,7 @@
 		};
 		23860B3322A7ED21006DA385 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17102C79F227DEB56B776F49 /* Pods-GuildWar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +589,7 @@
 		};
 		23860B3422A7ED21006DA385 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF292637D5173736D160076 /* Pods-GuildWar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +608,7 @@
 		};
 		23860B3622A7ED21006DA385 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC838A939EF43303D799C20 /* Pods-GuildWarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +630,7 @@
 		};
 		23860B3722A7ED21006DA385 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D51C2A33FC9B536AF98537AA /* Pods-GuildWarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +652,7 @@
 		};
 		23860B3922A7ED21006DA385 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +673,7 @@
 		};
 		23860B3A22A7ED21006DA385 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B23D4308988BC941838E9CCE /* Pods-GuildWarUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
