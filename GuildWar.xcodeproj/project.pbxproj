@@ -14,6 +14,14 @@
 		23860B1822A7ED21006DA385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23860B1622A7ED21006DA385 /* LaunchScreen.storyboard */; };
 		23860B2322A7ED21006DA385 /* GuildWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B2222A7ED21006DA385 /* GuildWarTests.swift */; };
 		23860B2E22A7ED21006DA385 /* GuildWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B2D22A7ED21006DA385 /* GuildWarUITests.swift */; };
+		23F3E21922A7F0CF008E3E73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E21822A7F0CF008E3E73 /* Constants.swift */; };
+		23F3E21B22A7F0E5008E3E73 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E21A22A7F0E5008E3E73 /* Api.swift */; };
+		23F3E21D22A7F1C5008E3E73 /* Liste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E21C22A7F1C5008E3E73 /* Liste.xib */; };
+		23F3E21F22A7F1E2008E3E73 /* Liste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E21E22A7F1E2008E3E73 /* Liste.swift */; };
+		23F3E22222A7F20E008E3E73 /* Cellule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E22122A7F20E008E3E73 /* Cellule.xib */; };
+		23F3E22422A7F228008E3E73 /* Cellule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22322A7F228008E3E73 /* Cellule.swift */; };
+		23F3E22722A7F252008E3E73 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E22622A7F252008E3E73 /* Detail.xib */; };
+		23F3E22922A7F261008E3E73 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22822A7F261008E3E73 /* Detail.swift */; };
 		45D95D4C3E1916204EAAF059 /* Pods_GuildWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB021C74B09936E8266896 /* Pods_GuildWarUITests.framework */; };
 		B313E15A741D341BF82941B1 /* Pods_GuildWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A5998B062FA62F0767309 /* Pods_GuildWarTests.framework */; };
 		D42266FFF376836D642BF8BF /* Pods_GuildWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */; };
@@ -51,6 +59,14 @@
 		23860B2922A7ED21006DA385 /* GuildWarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuildWarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23860B2D22A7ED21006DA385 /* GuildWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildWarUITests.swift; sourceTree = "<group>"; };
 		23860B2F22A7ED21006DA385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23F3E21822A7F0CF008E3E73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		23F3E21A22A7F0E5008E3E73 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		23F3E21C22A7F1C5008E3E73 /* Liste.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Liste.xib; sourceTree = "<group>"; };
+		23F3E21E22A7F1E2008E3E73 /* Liste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste.swift; sourceTree = "<group>"; };
+		23F3E22122A7F20E008E3E73 /* Cellule.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cellule.xib; sourceTree = "<group>"; };
+		23F3E22322A7F228008E3E73 /* Cellule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cellule.swift; sourceTree = "<group>"; };
+		23F3E22622A7F252008E3E73 /* Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Detail.xib; sourceTree = "<group>"; };
+		23F3E22822A7F261008E3E73 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF292637D5173736D160076 /* Pods-GuildWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWar.release.xcconfig"; path = "Target Support Files/Pods-GuildWar/Pods-GuildWar.release.xcconfig"; sourceTree = "<group>"; };
 		88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-GuildWarUITests/Pods-GuildWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +130,8 @@
 		23860B0C22A7ED1B006DA385 /* GuildWar */ = {
 			isa = PBXGroup;
 			children = (
+				23F3E21522A7F05B008E3E73 /* src */,
+				23F3E21422A7F04F008E3E73 /* Views */,
 				23860B0D22A7ED1B006DA385 /* AppDelegate.swift */,
 				23860B0F22A7ED1B006DA385 /* ViewController.swift */,
 				23860B1122A7ED1B006DA385 /* Main.storyboard */,
@@ -142,6 +160,68 @@
 			path = GuildWarUITests;
 			sourceTree = "<group>";
 		};
+		23F3E21422A7F04F008E3E73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E22022A7F1EC008E3E73 /* ListeView */,
+				23F3E22522A7F230008E3E73 /* CelluleView */,
+				23F3E22A22A7F267008E3E73 /* DetailView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23F3E21522A7F05B008E3E73 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E21722A7F096008E3E73 /* etc */,
+				23F3E21622A7F066008E3E73 /* API */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		23F3E21622A7F066008E3E73 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E21A22A7F0E5008E3E73 /* Api.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		23F3E21722A7F096008E3E73 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E21822A7F0CF008E3E73 /* Constants.swift */,
+			);
+			path = etc;
+			sourceTree = "<group>";
+		};
+		23F3E22022A7F1EC008E3E73 /* ListeView */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E21C22A7F1C5008E3E73 /* Liste.xib */,
+				23F3E21E22A7F1E2008E3E73 /* Liste.swift */,
+			);
+			path = ListeView;
+			sourceTree = "<group>";
+		};
+		23F3E22522A7F230008E3E73 /* CelluleView */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E22122A7F20E008E3E73 /* Cellule.xib */,
+				23F3E22322A7F228008E3E73 /* Cellule.swift */,
+			);
+			path = CelluleView;
+			sourceTree = "<group>";
+		};
+		23F3E22A22A7F267008E3E73 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E22622A7F252008E3E73 /* Detail.xib */,
+				23F3E22822A7F261008E3E73 /* Detail.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 		3ADAC7100FB6CA40C558BEE2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +232,6 @@
 				88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */,
 				B23D4308988BC941838E9CCE /* Pods-GuildWarUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -276,7 +355,10 @@
 			files = (
 				23860B1822A7ED21006DA385 /* LaunchScreen.storyboard in Resources */,
 				23860B1522A7ED21006DA385 /* Assets.xcassets in Resources */,
+				23F3E22222A7F20E008E3E73 /* Cellule.xib in Resources */,
 				23860B1322A7ED1B006DA385 /* Main.storyboard in Resources */,
+				23F3E22722A7F252008E3E73 /* Detail.xib in Resources */,
+				23F3E21D22A7F1C5008E3E73 /* Liste.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,8 +478,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F3E22422A7F228008E3E73 /* Cellule.swift in Sources */,
+				23F3E22922A7F261008E3E73 /* Detail.swift in Sources */,
 				23860B1022A7ED1B006DA385 /* ViewController.swift in Sources */,
 				23860B0E22A7ED1B006DA385 /* AppDelegate.swift in Sources */,
+				23F3E21F22A7F1E2008E3E73 /* Liste.swift in Sources */,
+				23F3E21B22A7F0E5008E3E73 /* Api.swift in Sources */,
+				23F3E21922A7F0CF008E3E73 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
