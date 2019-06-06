@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Moya
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let service = ServiceAPI()
+        service.getGroupe()
     }
-
-
 }
 

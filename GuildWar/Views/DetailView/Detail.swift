@@ -6,4 +6,8 @@
 //  Copyright © 2019 William Tomas. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Detail: UIView {
+    
+}

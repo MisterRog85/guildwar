@@ -6,4 +6,12 @@
 //  Copyright © 2019 William Tomas. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Cellule: UITableViewCell {
+    
+    @IBOutlet weak var titre: UILabel!
+    @IBOutlet weak var maDescription: UILabel!
+    @IBOutlet weak var monImage: UIImageView!
+    
+}

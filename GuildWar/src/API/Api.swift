@@ -10,3 +10,42 @@ import Foundation
 import Moya
 
 //ici on gère les appels vers l'API
+public enum Guildwar {
+    case groupe
+    case categorie
+    case detail
+}
+
+extension Guildwar: TargetType {
+    public var baseURL: URL {
+        return URL(string: Constants.Requete.BaseURL)!
+    }
+    
+    public var path: String {
+        switch self {
+            case .groupe: return "/"+Constants.Requete.Groupe
+            case .categorie: return "/"+Constants.Requete.Categorie
+            case .detail: return Constants.Requete.Details
+        }
+    }
+    
+    public var method: Moya.Method {
+        switch self {
+        case .groupe: return .get
+        case .categorie: return .get
+        case .detail: return .get
+        }
+    }
+    
+    public var sampleData: Data {
+        return Data()
+    }
+    
+    public var task: Task {
+        return .requestPlain
+    }
+    
+    public var headers: [String: String]? {
+        return ["Content-Type": "application/json"]
+    }
+}
