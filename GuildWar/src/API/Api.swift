@@ -12,6 +12,7 @@ import Moya
 //ici on gère les appels vers l'API
 public enum Guildwar {
     case groupe
+    case groupeComplet(idGroupe: String)
     case categorie
     case detail
 }
@@ -24,6 +25,7 @@ extension Guildwar: TargetType {
     public var path: String {
         switch self {
             case .groupe: return "/"+Constants.Requete.Groupe
+            case .groupeComplet(let idGroupe): return "/"+Constants.Requete.Groupe+"/"+idGroupe
             case .categorie: return "/"+Constants.Requete.Categorie
             case .detail: return Constants.Requete.Details
         }
@@ -32,6 +34,7 @@ extension Guildwar: TargetType {
     public var method: Moya.Method {
         switch self {
         case .groupe: return .get
+        case .groupeComplet(_): return .get
         case .categorie: return .get
         case .detail: return .get
         }

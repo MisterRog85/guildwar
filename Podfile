@@ -7,7 +7,8 @@ target 'GuildWar' do
 
   # Pods for GuildWar
   pod 'Moya', '~> 13.0'
-  
+  pod 'SwiftyJSON', '~> 4.0'
+
   target 'GuildWarTests' do
     inherit! :search_paths
     # Pods for testing

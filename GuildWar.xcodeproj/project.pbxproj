@@ -23,6 +23,9 @@
 		23F3E22722A7F252008E3E73 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E22622A7F252008E3E73 /* Detail.xib */; };
 		23F3E22922A7F261008E3E73 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22822A7F261008E3E73 /* Detail.swift */; };
 		23F3E22C22A915FF008E3E73 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22B22A915FF008E3E73 /* ServiceAPI.swift */; };
+		23F3E23022A93ACC008E3E73 /* GroupStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */; };
+		23F3E23222A93AFA008E3E73 /* CategorieStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */; };
+		23F3E23422A93B0B008E3E73 /* DetailStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E23322A93B0B008E3E73 /* DetailStruct.swift */; };
 		45D95D4C3E1916204EAAF059 /* Pods_GuildWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB021C74B09936E8266896 /* Pods_GuildWarUITests.framework */; };
 		B313E15A741D341BF82941B1 /* Pods_GuildWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A5998B062FA62F0767309 /* Pods_GuildWarTests.framework */; };
 		D42266FFF376836D642BF8BF /* Pods_GuildWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */; };
@@ -69,6 +72,9 @@
 		23F3E22622A7F252008E3E73 /* Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Detail.xib; sourceTree = "<group>"; };
 		23F3E22822A7F261008E3E73 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		23F3E22B22A915FF008E3E73 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStruct.swift; sourceTree = "<group>"; };
+		23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieStruct.swift; sourceTree = "<group>"; };
+		23F3E23322A93B0B008E3E73 /* DetailStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStruct.swift; sourceTree = "<group>"; };
 		653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF292637D5173736D160076 /* Pods-GuildWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWar.release.xcconfig"; path = "Target Support Files/Pods-GuildWar/Pods-GuildWar.release.xcconfig"; sourceTree = "<group>"; };
 		88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-GuildWarUITests/Pods-GuildWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		23860B0C22A7ED1B006DA385 /* GuildWar */ = {
 			isa = PBXGroup;
 			children = (
+				23F3E22E22A93AAC008E3E73 /* Models */,
 				23F3E21522A7F05B008E3E73 /* src */,
 				23F3E21422A7F04F008E3E73 /* Views */,
 				23860B0D22A7ED1B006DA385 /* AppDelegate.swift */,
@@ -231,6 +238,16 @@
 				23F3E22B22A915FF008E3E73 /* ServiceAPI.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		23F3E22E22A93AAC008E3E73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */,
+				23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */,
+				23F3E23322A93B0B008E3E73 /* DetailStruct.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3ADAC7100FB6CA40C558BEE2 /* Pods */ = {
@@ -468,6 +485,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -476,6 +494,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -492,8 +511,11 @@
 				23F3E22422A7F228008E3E73 /* Cellule.swift in Sources */,
 				23F3E22922A7F261008E3E73 /* Detail.swift in Sources */,
 				23860B1022A7ED1B006DA385 /* ViewController.swift in Sources */,
+				23F3E23422A93B0B008E3E73 /* DetailStruct.swift in Sources */,
+				23F3E23022A93ACC008E3E73 /* GroupStruct.swift in Sources */,
 				23860B0E22A7ED1B006DA385 /* AppDelegate.swift in Sources */,
 				23F3E21F22A7F1E2008E3E73 /* Liste.swift in Sources */,
+				23F3E23222A93AFA008E3E73 /* CategorieStruct.swift in Sources */,
 				23F3E21B22A7F0E5008E3E73 /* Api.swift in Sources */,
 				23F3E22C22A915FF008E3E73 /* ServiceAPI.swift in Sources */,
 				23F3E21922A7F0CF008E3E73 /* Constants.swift in Sources */,
