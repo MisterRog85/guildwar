@@ -12,25 +12,15 @@ import SwiftyJSON
 
 public class ServiceAPI {
     let provider = MoyaProvider<Guildwar>()
-    var retourComplet: [GroupeComplexe] = []
     
     public func getGroupe() {
         provider.request(.groupe) { result in
             switch result {
             case let .success(moyaResponse):
                 do {
-                    //print (try moyaResponse.mapJSON())
                     let jsons = try JSON(data: moyaResponse.data)
-                    
                     for i in 0..<jsons.count {
-                        //print (jsons[i].string!)
                         self.getGroupeComplet(id: jsons[i].string!)
-                    }
-                
-                    if let id = jsons[10].string {
-                        //print (id)
-                    } else {
-                        //print ("erreur avec swiftyJSON")
                     }
                 } catch {
                     print("erreur de décodage")
@@ -46,7 +36,6 @@ public class ServiceAPI {
             switch result {
             case let .success(moyaResponse):
                 do {
-                    //print (try moyaResponse.mapJSON())
                     self.setGroupeComplet(myData: moyaResponse.data)
                 } catch {
                     print("erreur de décodage")
@@ -58,14 +47,9 @@ public class ServiceAPI {
     }
     
     public func setGroupeComplet(myData: Data) {
-        let jsonArray = try! JSON(data: myData)
-        
-        print(jsonArray[0])
-        /*for (index, elem) in jsonArray {
-            //let thisObject = GroupeComplexe(id: elem{"id"})
-            print (elem[index]{"id"}.string)
-        }*/
-        
-        
+        let jsonObject = try! JSON(data: myData)
+        //print (jsonObject["name"].string!)
+        var swiftObject = GroupeComplexe.init(id: jsonObject["id"].string!, name: jsonObject["name"].string!, description: jsonObject["description"].string!, order: jsonObject["order"].int!, categorie: jsonObject["categories"].arrayObject! as! [Int])
+        print (swiftObject.name)
     }
 }
