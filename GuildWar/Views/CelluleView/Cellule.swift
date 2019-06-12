@@ -9,9 +9,8 @@
 import UIKit
 
 class Cellule: UITableViewCell {
-    
-    @IBOutlet weak var titre: UILabel!
-    @IBOutlet weak var maDescription: UILabel!
-    @IBOutlet weak var monImage: UIImageView!
-    
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }

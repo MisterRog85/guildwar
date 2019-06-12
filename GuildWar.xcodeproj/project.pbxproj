@@ -14,10 +14,11 @@
 		23860B1822A7ED21006DA385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23860B1622A7ED21006DA385 /* LaunchScreen.storyboard */; };
 		23860B2322A7ED21006DA385 /* GuildWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B2222A7ED21006DA385 /* GuildWarTests.swift */; };
 		23860B2E22A7ED21006DA385 /* GuildWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B2D22A7ED21006DA385 /* GuildWarUITests.swift */; };
+		23956CE922B0EE4500B41FFD /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23956CE822B0EE4500B41FFD /* GroupService.swift */; };
+		23956CF622B13C1F00B41FFD /* ListeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23956CF422B13C1F00B41FFD /* ListeViewController.swift */; };
+		23956CF722B13C1F00B41FFD /* ListeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23956CF522B13C1F00B41FFD /* ListeViewController.xib */; };
 		23F3E21922A7F0CF008E3E73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E21822A7F0CF008E3E73 /* Constants.swift */; };
 		23F3E21B22A7F0E5008E3E73 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E21A22A7F0E5008E3E73 /* Api.swift */; };
-		23F3E21D22A7F1C5008E3E73 /* Liste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E21C22A7F1C5008E3E73 /* Liste.xib */; };
-		23F3E21F22A7F1E2008E3E73 /* Liste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E21E22A7F1E2008E3E73 /* Liste.swift */; };
 		23F3E22222A7F20E008E3E73 /* Cellule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E22122A7F20E008E3E73 /* Cellule.xib */; };
 		23F3E22422A7F228008E3E73 /* Cellule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22322A7F228008E3E73 /* Cellule.swift */; };
 		23F3E22722A7F252008E3E73 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E22622A7F252008E3E73 /* Detail.xib */; };
@@ -63,16 +64,17 @@
 		23860B2922A7ED21006DA385 /* GuildWarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuildWarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23860B2D22A7ED21006DA385 /* GuildWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildWarUITests.swift; sourceTree = "<group>"; };
 		23860B2F22A7ED21006DA385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23956CE822B0EE4500B41FFD /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
+		23956CF422B13C1F00B41FFD /* ListeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeViewController.swift; sourceTree = "<group>"; };
+		23956CF522B13C1F00B41FFD /* ListeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListeViewController.xib; sourceTree = "<group>"; };
 		23F3E21822A7F0CF008E3E73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		23F3E21A22A7F0E5008E3E73 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		23F3E21C22A7F1C5008E3E73 /* Liste.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Liste.xib; sourceTree = "<group>"; };
-		23F3E21E22A7F1E2008E3E73 /* Liste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste.swift; sourceTree = "<group>"; };
 		23F3E22122A7F20E008E3E73 /* Cellule.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cellule.xib; sourceTree = "<group>"; };
 		23F3E22322A7F228008E3E73 /* Cellule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cellule.swift; sourceTree = "<group>"; };
 		23F3E22622A7F252008E3E73 /* Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Detail.xib; sourceTree = "<group>"; };
 		23F3E22822A7F261008E3E73 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		23F3E22B22A915FF008E3E73 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
-		23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStruct.swift; sourceTree = "<group>"; };
+		23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupStruct.swift; path = ../GroupStruct.swift; sourceTree = "<group>"; };
 		23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieStruct.swift; sourceTree = "<group>"; };
 		23F3E23322A93B0B008E3E73 /* DetailStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStruct.swift; sourceTree = "<group>"; };
 		653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,10 +171,28 @@
 			path = GuildWarUITests;
 			sourceTree = "<group>";
 		};
+		23956CEA22B0F28400B41FFD /* Groupe */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */,
+				23956CE822B0EE4500B41FFD /* GroupService.swift */,
+			);
+			path = Groupe;
+			sourceTree = "<group>";
+		};
+		23956CF822B13C2700B41FFD /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				23956CF422B13C1F00B41FFD /* ListeViewController.swift */,
+				23956CF522B13C1F00B41FFD /* ListeViewController.xib */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
 		23F3E21422A7F04F008E3E73 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				23F3E22022A7F1EC008E3E73 /* ListeView */,
+				23956CF822B13C2700B41FFD /* ListViewController */,
 				23F3E22522A7F230008E3E73 /* CelluleView */,
 				23F3E22A22A7F267008E3E73 /* DetailView */,
 			);
@@ -205,15 +225,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		23F3E22022A7F1EC008E3E73 /* ListeView */ = {
-			isa = PBXGroup;
-			children = (
-				23F3E21C22A7F1C5008E3E73 /* Liste.xib */,
-				23F3E21E22A7F1E2008E3E73 /* Liste.swift */,
-			);
-			path = ListeView;
-			sourceTree = "<group>";
-		};
 		23F3E22522A7F230008E3E73 /* CelluleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +254,7 @@
 		23F3E22E22A93AAC008E3E73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */,
+				23956CEA22B0F28400B41FFD /* Groupe */,
 				23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */,
 				23F3E23322A93B0B008E3E73 /* DetailStruct.swift */,
 			);
@@ -386,7 +397,7 @@
 				23F3E22222A7F20E008E3E73 /* Cellule.xib in Resources */,
 				23860B1322A7ED1B006DA385 /* Main.storyboard in Resources */,
 				23F3E22722A7F252008E3E73 /* Detail.xib in Resources */,
-				23F3E21D22A7F1C5008E3E73 /* Liste.xib in Resources */,
+				23956CF722B13C1F00B41FFD /* ListeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +525,8 @@
 				23F3E23422A93B0B008E3E73 /* DetailStruct.swift in Sources */,
 				23F3E23022A93ACC008E3E73 /* GroupStruct.swift in Sources */,
 				23860B0E22A7ED1B006DA385 /* AppDelegate.swift in Sources */,
-				23F3E21F22A7F1E2008E3E73 /* Liste.swift in Sources */,
+				23956CF622B13C1F00B41FFD /* ListeViewController.swift in Sources */,
+				23956CE922B0EE4500B41FFD /* GroupService.swift in Sources */,
 				23F3E23222A93AFA008E3E73 /* CategorieStruct.swift in Sources */,
 				23F3E21B22A7F0E5008E3E73 /* Api.swift in Sources */,
 				23F3E22C22A915FF008E3E73 /* ServiceAPI.swift in Sources */,

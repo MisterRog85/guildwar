@@ -14,21 +14,26 @@ public class ServiceAPI {
     let provider = MoyaProvider<Guildwar>()
     
     public func getGroupe() {
-        provider.request(.groupe) { result in
-            switch result {
-            case let .success(moyaResponse):
-                do {
-                    let jsons = try JSON(data: moyaResponse.data)
-                    for i in 0..<jsons.count {
-                        self.getGroupeComplet(id: jsons[i].string!)
+            let provider = MoyaProvider<Guildwar>()
+            provider.request(.groupe) { result in
+                switch result {
+                case let .success(moyaResponse):
+                    do {
+                        let jsons = try JSON(data: moyaResponse.data)
+                        for i in 0..<jsons.count {
+                            self.getGroupeComplet(id: jsons[i].string!)
+                            print (jsons[i].string!)
+                            if i == jsons.count - 1 {
+                                print ("terminé")
+                            }
+                        }
+                    } catch {
+                        print("erreur de décodage")
                     }
-                } catch {
-                    print("erreur de décodage")
+                case let .failure(error):
+                    print("erreur de contact API : ")
                 }
-            case let .failure(error):
-                print("erreur de contact API : ")
             }
-        }
     }
     
     public func getGroupeComplet(id: String){
@@ -48,8 +53,9 @@ public class ServiceAPI {
     
     public func setGroupeComplet(myData: Data) {
         let jsonObject = try! JSON(data: myData)
-        //print (jsonObject["name"].string!)
-        var swiftObject = GroupeComplexe.init(id: jsonObject["id"].string!, name: jsonObject["name"].string!, description: jsonObject["description"].string!, order: jsonObject["order"].int!, categorie: jsonObject["categories"].arrayObject! as! [Int])
-        print (swiftObject.name)
+        let swiftObject = Groupe(id: jsonObject["id"].string!, name: jsonObject["name"].string!, description: jsonObject["description"].string!, order: jsonObject["order"].int!, categorie: jsonObject["categories"].arrayObject! as! [Int])
+        GroupService.shared.add(groupe: swiftObject)
+        //print (GroupService.shared.getGroupe(id: 0).name)
     }
+
 }
