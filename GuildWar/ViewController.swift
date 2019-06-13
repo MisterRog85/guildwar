@@ -17,14 +17,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //let service = ServiceAPI()
-        //service.getGroupe()
         
         self.vueListe = ListeViewController(nibName: "ListeViewController", bundle: nil)
         self.view.addSubview(vueListe.view)
         self.vueListe.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-
     }
 }
 

@@ -8,29 +8,31 @@
 
 import UIKit
 
-class ListeViewController: UIViewController {
+class ListeViewController: UIViewController, ChargementDelegate {
     
     @IBOutlet weak var laListe: UITableView!
-    
-    /*override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }*/
 
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
+        
          laListe.dataSource = self
          laListe.delegate = self
+        
          let nib = UINib(nibName: "Cellule", bundle: nil)
-         laListe.register(nib, forCellReuseIdentifier: "maCellule")
+         laListe.register(nib, forCellReuseIdentifier: "Cellule")
+        
          let service = ServiceAPI()
+         service.delegate  = self
          service.getGroupe()
-         //print (GroupService.shared.getGroupe(id: 0).name)
-         laListe.reloadData()
      }
+    
+    func afficherElements() {
+        laListe.reloadData()
+        print ("appel delegate")
+    }
 
 }
+
 extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
      func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -41,7 +43,7 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
      }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "maCellule", for: indexPath) as! Cellule
+         let cell = tableView.dequeueReusableCell(withIdentifier: "Cellule", for: indexPath) as! Cellule
         
          let groupe = GroupService.shared.lesGroupes[indexPath.row]
         

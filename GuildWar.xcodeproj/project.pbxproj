@@ -183,8 +183,8 @@
 		23956CF822B13C2700B41FFD /* ListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				23956CF422B13C1F00B41FFD /* ListeViewController.swift */,
 				23956CF522B13C1F00B41FFD /* ListeViewController.xib */,
+				23956CF422B13C1F00B41FFD /* ListeViewController.swift */,
 			);
 			path = ListViewController;
 			sourceTree = "<group>";
