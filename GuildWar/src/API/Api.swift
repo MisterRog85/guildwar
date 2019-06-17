@@ -13,8 +13,9 @@ import Moya
 public enum Guildwar {
     case groupe
     case groupeComplet(idGroupe: String)
-    case categorie
-    case detail
+    case categorie(idCat: Int)
+    case listeSucces(ids: String)
+    case detail(idDet: Int)
 }
 
 extension Guildwar: TargetType {
@@ -26,8 +27,9 @@ extension Guildwar: TargetType {
         switch self {
             case .groupe: return "/"+Constants.Requete.Groupe
             case .groupeComplet(let idGroupe): return "/"+Constants.Requete.Groupe+"/"+idGroupe
-            case .categorie: return "/"+Constants.Requete.Categorie
-            case .detail: return Constants.Requete.Details
+            case .categorie(let idCat): return "/"+Constants.Requete.Categorie+"/"+String(idCat)
+            case .listeSucces(_): return ""
+            case .detail(let idDet): return "?"+Constants.Requete.Details+String(idDet)
         }
     }
     
@@ -35,8 +37,9 @@ extension Guildwar: TargetType {
         switch self {
         case .groupe: return .get
         case .groupeComplet(_): return .get
-        case .categorie: return .get
-        case .detail: return .get
+        case .categorie(_): return .get
+        case .listeSucces(_): return .get
+        case .detail(_): return .get
         }
     }
     
@@ -45,7 +48,14 @@ extension Guildwar: TargetType {
     }
     
     public var task: Task {
-        return .requestPlain
+        switch self {
+        case .listeSucces(let ids):
+            var params: [String: Any] = [:]
+            params[Constants.Requete.Details] = ids
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        default:
+            return .requestPlain
+        }
     }
     
     public var headers: [String: String]? {

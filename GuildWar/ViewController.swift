@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         self.vueListe = ListeViewController(nibName: "ListeViewController", bundle: nil)
         self.view.addSubview(vueListe.view)
         self.vueListe.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        let service = ServiceAPI()
+        service.delegate  = self.vueListe
+        //service.getGroupe()
+        //service.getCategorie(ids: [1, 3, 5])
+        service.getListeSucces(ids: [1, 4, 5])
     }
 }
 

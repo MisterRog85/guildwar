@@ -14,6 +14,20 @@ public class Constants {
         static let BaseURL = "https://api.guildwars2.com/v2/achievements"
         static let Groupe = "groups"
         static let Categorie = "categories"
-        static let Details = "?ids="
+        static let Details = "ids"
+    }
+    
+    struct JsonKeys {
+        static let id = "id"
+        static let name = "name"
+        static let description = "description"
+        static let order = "order"
+        static let categories = "categories"
+        static let icon = "icon"
+        static let achievements = "achievements"
+        static let requirement = "requirement"
+        static let locked_text = "locked_text"
+        static let type = "type"
+        static let flags = "flags"
     }
 }

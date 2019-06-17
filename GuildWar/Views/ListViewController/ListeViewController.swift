@@ -10,6 +10,8 @@ import UIKit
 
 class ListeViewController: UIViewController, ChargementDelegate {
     
+    var etat: String = ""
+    
     @IBOutlet weak var laListe: UITableView!
 
     override func viewWillAppear(_ animated: Bool) {
@@ -21,12 +23,10 @@ class ListeViewController: UIViewController, ChargementDelegate {
          let nib = UINib(nibName: "Cellule", bundle: nil)
          laListe.register(nib, forCellReuseIdentifier: "Cellule")
         
-         let service = ServiceAPI()
-         service.delegate  = self
-         service.getGroupe()
      }
     
-    func afficherElements() {
+    func afficherElements(type: String) {
+        etat = type
         laListe.reloadData()
         print ("appel delegate")
     }
@@ -39,16 +39,46 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
      }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GroupService.shared.getGroupeCount()
+        var taille: Int = 0
+        switch etat {
+        case "Groupe":
+            taille = GroupService.shared.getGroupeCount()
+        case "Categorie":
+            taille = CategorieService.shared.getCategorieCount()
+        case "Succes":
+            taille = SuccesService.shared.getSuccesCount()
+        default:
+            print ("erreur switch")
+        }
+        return taille
      }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "Cellule", for: indexPath) as! Cellule
         
-         let groupe = GroupService.shared.lesGroupes[indexPath.row]
+        print("etat:" + etat)
         
-         cell.textLabel?.text = groupe.name
-         cell.detailTextLabel?.text = groupe.description
+        //a ameliorer
+        switch etat {
+        case "Groupe":
+            let element = GroupService.shared.lesGroupes[indexPath.row]
+            cell.textLabel?.text = element.name
+            cell.detailTextLabel?.text = element.description
+        case "Categorie":
+            let element = CategorieService.shared.lesCategories[indexPath.row]
+            cell.textLabel?.text = element.name
+            cell.detailTextLabel?.text = element.description
+        case "Succes":
+            let element = SuccesService.shared.lesSucces[indexPath.row]
+            cell.textLabel?.text = element.name
+            cell.detailTextLabel?.text = element.description
+        default:
+            print ("erreur de le switch de reload")
+        }
+         /*let groupe = GroupService.shared.lesGroupes[indexPath.row]
+        
+         cell.textLabel?.text = element.name
+         cell.detailTextLabel?.text = groupe.description*/
         
          return cell
      }

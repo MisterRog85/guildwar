@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct categories : Decodable {
-    let id: Int
-    let name: String
-    let description: String?
-    let order: Int
-    let icon: URL
-    let achievements: [Int]
+struct Categorie : Decodable {
+    var id: Int
+    var name: String
+    var description: String?
+    var order: Int
+    var icon: URL
+    var achievements: [Int]
 }

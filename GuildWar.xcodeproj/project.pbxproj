@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23453C7222B297B700126C34 /* GroupStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23453C7122B297B700126C34 /* GroupStruct.swift */; };
+		23453C7622B297C900126C34 /* CategorieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23453C7422B297C900126C34 /* CategorieService.swift */; };
+		23453C7722B297C900126C34 /* CategorieStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23453C7522B297C900126C34 /* CategorieStruct.swift */; };
+		23453C7922B393FF00126C34 /* SuccesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23453C7822B393FF00126C34 /* SuccesService.swift */; };
 		23860B0E22A7ED1B006DA385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B0D22A7ED1B006DA385 /* AppDelegate.swift */; };
 		23860B1022A7ED1B006DA385 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23860B0F22A7ED1B006DA385 /* ViewController.swift */; };
 		23860B1322A7ED1B006DA385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23860B1122A7ED1B006DA385 /* Main.storyboard */; };
@@ -24,9 +28,7 @@
 		23F3E22722A7F252008E3E73 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F3E22622A7F252008E3E73 /* Detail.xib */; };
 		23F3E22922A7F261008E3E73 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22822A7F261008E3E73 /* Detail.swift */; };
 		23F3E22C22A915FF008E3E73 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22B22A915FF008E3E73 /* ServiceAPI.swift */; };
-		23F3E23022A93ACC008E3E73 /* GroupStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */; };
-		23F3E23222A93AFA008E3E73 /* CategorieStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */; };
-		23F3E23422A93B0B008E3E73 /* DetailStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E23322A93B0B008E3E73 /* DetailStruct.swift */; };
+		23F3E23422A93B0B008E3E73 /* SuccesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3E23322A93B0B008E3E73 /* SuccesStruct.swift */; };
 		45D95D4C3E1916204EAAF059 /* Pods_GuildWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB021C74B09936E8266896 /* Pods_GuildWarUITests.framework */; };
 		B313E15A741D341BF82941B1 /* Pods_GuildWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0A5998B062FA62F0767309 /* Pods_GuildWarTests.framework */; };
 		D42266FFF376836D642BF8BF /* Pods_GuildWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */; };
@@ -51,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		17102C79F227DEB56B776F49 /* Pods-GuildWar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWar.debug.xcconfig"; path = "Target Support Files/Pods-GuildWar/Pods-GuildWar.debug.xcconfig"; sourceTree = "<group>"; };
+		23453C7122B297B700126C34 /* GroupStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStruct.swift; sourceTree = "<group>"; };
+		23453C7422B297C900126C34 /* CategorieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorieService.swift; sourceTree = "<group>"; };
+		23453C7522B297C900126C34 /* CategorieStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorieStruct.swift; sourceTree = "<group>"; };
+		23453C7822B393FF00126C34 /* SuccesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccesService.swift; path = ../Detail/SuccesService.swift; sourceTree = "<group>"; };
 		23860B0A22A7ED1B006DA385 /* GuildWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuildWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23860B0D22A7ED1B006DA385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23860B0F22A7ED1B006DA385 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +80,7 @@
 		23F3E22622A7F252008E3E73 /* Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Detail.xib; sourceTree = "<group>"; };
 		23F3E22822A7F261008E3E73 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		23F3E22B22A915FF008E3E73 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
-		23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupStruct.swift; path = ../GroupStruct.swift; sourceTree = "<group>"; };
-		23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieStruct.swift; sourceTree = "<group>"; };
-		23F3E23322A93B0B008E3E73 /* DetailStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStruct.swift; sourceTree = "<group>"; };
+		23F3E23322A93B0B008E3E73 /* SuccesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccesStruct.swift; path = ../SuccesStruct.swift; sourceTree = "<group>"; };
 		653CAEAB969E16A038F19826 /* Pods_GuildWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuildWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF292637D5173736D160076 /* Pods-GuildWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWar.release.xcconfig"; path = "Target Support Files/Pods-GuildWar/Pods-GuildWar.release.xcconfig"; sourceTree = "<group>"; };
 		88AB7422AD4F9F673E3BD86C /* Pods-GuildWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuildWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-GuildWarUITests/Pods-GuildWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23453C7322B297C900126C34 /* Categorie */ = {
+			isa = PBXGroup;
+			children = (
+				23453C7522B297C900126C34 /* CategorieStruct.swift */,
+				23453C7422B297C900126C34 /* CategorieService.swift */,
+			);
+			path = Categorie;
+			sourceTree = "<group>";
+		};
+		23453C7A22B3940E00126C34 /* Succes */ = {
+			isa = PBXGroup;
+			children = (
+				23F3E23322A93B0B008E3E73 /* SuccesStruct.swift */,
+				23453C7822B393FF00126C34 /* SuccesService.swift */,
+			);
+			path = Succes;
+			sourceTree = "<group>";
+		};
 		23860B0122A7ED1B006DA385 = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +196,7 @@
 		23956CEA22B0F28400B41FFD /* Groupe */ = {
 			isa = PBXGroup;
 			children = (
-				23F3E22F22A93ACC008E3E73 /* GroupStruct.swift */,
+				23453C7122B297B700126C34 /* GroupStruct.swift */,
 				23956CE822B0EE4500B41FFD /* GroupService.swift */,
 			);
 			path = Groupe;
@@ -254,9 +276,9 @@
 		23F3E22E22A93AAC008E3E73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				23453C7322B297C900126C34 /* Categorie */,
 				23956CEA22B0F28400B41FFD /* Groupe */,
-				23F3E23122A93AFA008E3E73 /* CategorieStruct.swift */,
-				23F3E23322A93B0B008E3E73 /* DetailStruct.swift */,
+				23453C7A22B3940E00126C34 /* Succes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,14 +542,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F3E22422A7F228008E3E73 /* Cellule.swift in Sources */,
+				23453C7622B297C900126C34 /* CategorieService.swift in Sources */,
+				23453C7722B297C900126C34 /* CategorieStruct.swift in Sources */,
 				23F3E22922A7F261008E3E73 /* Detail.swift in Sources */,
 				23860B1022A7ED1B006DA385 /* ViewController.swift in Sources */,
-				23F3E23422A93B0B008E3E73 /* DetailStruct.swift in Sources */,
-				23F3E23022A93ACC008E3E73 /* GroupStruct.swift in Sources */,
+				23F3E23422A93B0B008E3E73 /* SuccesStruct.swift in Sources */,
 				23860B0E22A7ED1B006DA385 /* AppDelegate.swift in Sources */,
 				23956CF622B13C1F00B41FFD /* ListeViewController.swift in Sources */,
+				23453C7922B393FF00126C34 /* SuccesService.swift in Sources */,
 				23956CE922B0EE4500B41FFD /* GroupService.swift in Sources */,
-				23F3E23222A93AFA008E3E73 /* CategorieStruct.swift in Sources */,
+				23453C7222B297B700126C34 /* GroupStruct.swift in Sources */,
 				23F3E21B22A7F0E5008E3E73 /* Api.swift in Sources */,
 				23F3E22C22A915FF008E3E73 /* ServiceAPI.swift in Sources */,
 				23F3E21922A7F0CF008E3E73 /* Constants.swift in Sources */,
