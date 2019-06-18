@@ -11,7 +11,7 @@ import Moya
 import SwiftyJSON
 
 protocol ChargementDelegate {
-    func afficherElements(type: String)
+    func chargerElement(type: String)
 }
 
 public class ServiceAPI {
@@ -69,7 +69,7 @@ public class ServiceAPI {
         //print (GroupService.shared.getGroupe(id: 0).name)
         if termine == true {
             if let delegateObject = delegate {
-                delegateObject.afficherElements(type: "Groupe")
+                delegateObject.chargerElement(type: "Groupe")
             }
         }
     }
@@ -101,7 +101,7 @@ public class ServiceAPI {
         CategorieService.shared.add(categorie: swiftObject)
         if termine == true {
             if let delegateObject = delegate {
-                delegateObject.afficherElements(type: "Categorie")
+                delegateObject.chargerElement(type: "Categorie")
             }
         }
     }
@@ -139,7 +139,7 @@ public class ServiceAPI {
         SuccesService.shared.add(succes: swiftObject)
         if termine == true {
             if let delegateObject = delegate {
-                delegateObject.afficherElements(type: "Succes")
+                delegateObject.chargerElement(type: "Succes")
             }
         }
     }
