@@ -12,9 +12,8 @@ struct Succes: Decodable {
     var id: Int
     var name: String
     var description: String?
-    var requirement: String
+    var requirement: String?
     var locked_text: String?
     var type: String?
     var flags: [String]
-    
 }

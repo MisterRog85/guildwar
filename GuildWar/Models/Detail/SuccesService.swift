@@ -24,7 +24,14 @@ class SuccesService {
     }
     
     func getSucces(id: Int) -> Succes {
-        return lesSucces[id]
+        var succes: Succes! = nil
+        for i in 0..<(lesSucces.count-1) {
+            if i == id {
+                succes = Succes(id: lesSucces[i].id, name: lesSucces[i].name, description: lesSucces[i].description, requirement: lesSucces[i].requirement, locked_text: lesSucces[i].locked_text, type: lesSucces[i].type, flags: lesSucces[i].flags )
+                break
+            }
+        }
+        return succes
     }
     
     func getSuccesCount() -> Int {

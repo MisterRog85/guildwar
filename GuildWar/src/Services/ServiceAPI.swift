@@ -97,7 +97,7 @@ public class ServiceAPI {
     }
     
     public func setCategorie(jsonObject: JSON, termine: Bool?) {
-        let swiftObject = Categorie(id: jsonObject[Constants.JsonKeys.id].int!, name: jsonObject[Constants.JsonKeys.name].string!, description: jsonObject[Constants.JsonKeys.description].string!, order: jsonObject[Constants.JsonKeys.order].int!, icon: jsonObject[Constants.JsonKeys.icon].url!, achievements: jsonObject[Constants.JsonKeys.achievements].arrayObject! as! [Int]) //description peut être vide
+        let swiftObject = Categorie(id: jsonObject[Constants.JsonKeys.id].int!, name: jsonObject[Constants.JsonKeys.name].string!, description: jsonObject[Constants.JsonKeys.description].string, order: jsonObject[Constants.JsonKeys.order].int!, icon: jsonObject[Constants.JsonKeys.icon].url!, achievements: jsonObject[Constants.JsonKeys.achievements].arrayObject! as! [Int]) //description peut être vide
         CategorieService.shared.add(categorie: swiftObject)
         if termine == true {
             if let delegateObject = delegate {
@@ -135,7 +135,7 @@ public class ServiceAPI {
     }
     
     public func setListeSucces(myData: JSON, termine: Bool?) {
-        let swiftObject = Succes(id: myData[Constants.JsonKeys.id].int!, name: myData[Constants.JsonKeys.name].string!, description: myData[Constants.JsonKeys.description].string!, requirement: myData[Constants.JsonKeys.requirement].string!, locked_text: myData[Constants.JsonKeys.locked_text].string!, type: myData[Constants.JsonKeys.type].string!, flags: myData[Constants.JsonKeys.flags].arrayObject! as! [String])
+        let swiftObject = Succes(id: myData[Constants.JsonKeys.id].int!, name: myData[Constants.JsonKeys.name].string!, description: myData[Constants.JsonKeys.description].string, requirement: myData[Constants.JsonKeys.requirement].string, locked_text: myData[Constants.JsonKeys.locked_text].string, type: myData[Constants.JsonKeys.type].string, flags: myData[Constants.JsonKeys.flags].arrayObject! as! [String])
         SuccesService.shared.add(succes: swiftObject)
         if termine == true {
             if let delegateObject = delegate {

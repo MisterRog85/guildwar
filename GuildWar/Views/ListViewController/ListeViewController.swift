@@ -10,6 +10,7 @@ import UIKit
 
 protocol AffichageDelegate {
     func afficherElements(type: String, elem: [Int]?)
+    func chargerDetails(succes: Int)
 }
 
 class ListeViewController: UIViewController, ChargementDelegate {
@@ -93,7 +94,9 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
                     delegateObject.afficherElements(type: "Succes", elem: CategorieService.shared.getCategorie(id: indexPath.row).achievements)
                 }
             case "Succes" :
-                print("on affiche le detail d'un succès")
+                if let delegateObject = delegate {
+                    delegateObject.chargerDetails(succes: indexPath.row)
+            }
             default :
                 print("erreur switch ListViewController")
         }

@@ -14,6 +14,7 @@ class ViewController: UIViewController, AffichageDelegate {
     @IBOutlet var maVue: UIView!
     
     var vueListe: ListeViewController!
+    var vueDetail: Detail!
     
     let service = ServiceAPI()
     
@@ -29,6 +30,8 @@ class ViewController: UIViewController, AffichageDelegate {
         service.getGroupe()
         //service.getCategorie(ids: [1, 3, 5])
         //service.getListeSucces(ids: [1, 4, 5])
+        
+        
     }
     
     func afficherElements(type: String, elem: [Int]?) {
@@ -43,6 +46,13 @@ class ViewController: UIViewController, AffichageDelegate {
         default:
             print ("erreur chargement switch ViewController")
         }
+    }
+    
+    func chargerDetails(succes: Int) {
+        self.vueDetail = Detail(nibName: "Detail", bundle: nil)
+        self.vueDetail.objet = SuccesService.shared.getSucces(id: succes)
+        self.view.addSubview(vueDetail.view)
+        self.vueDetail.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
     }
 }
 
