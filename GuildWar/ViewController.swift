@@ -9,7 +9,7 @@
 import UIKit
 import Moya
 
-class ViewController: UIViewController, AffichageDelegate {
+class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
     
     @IBOutlet var maVue: UIView!
     
@@ -27,11 +27,7 @@ class ViewController: UIViewController, AffichageDelegate {
         self.vueListe.delegate = self
         
         service.delegate  = self.vueListe
-        service.getGroupe()
-        //service.getCategorie(ids: [1, 3, 5])
-        //service.getListeSucces(ids: [1, 4, 5])
-        
-        
+        service.getGroupe()        
     }
     
     func afficherElements(type: String, elem: [Int]?) {
@@ -51,8 +47,18 @@ class ViewController: UIViewController, AffichageDelegate {
     func chargerDetails(succes: Int) {
         self.vueDetail = Detail(nibName: "Detail", bundle: nil)
         self.vueDetail.objet = SuccesService.shared.getSucces(id: succes)
-        self.view.addSubview(vueDetail.view)
+        UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+            self.view.addSubview(self.vueDetail.view)
+        }, completion: nil)
         self.vueDetail.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.vueDetail.delegate = self
+    }
+    
+    func supprimerDetails() {
+        if self.vueDetail != nil {
+            self.vueDetail.removeFromParent()
+            self.viewDidLoad()
+        }
     }
 }
 

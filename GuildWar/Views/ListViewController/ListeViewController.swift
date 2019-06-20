@@ -33,13 +33,26 @@ class ListeViewController: UIViewController, ChargementDelegate {
     
     func chargerElement(type: String) {
         etat = type
-        laListe.reloadData()
+        UIView.transition(with: laListe,
+                          duration: 0.35,
+                          options: .transitionCrossDissolve,
+                          animations: { self.laListe.reloadData() })
+        //laListe.reloadData()
         print ("appel delegate")
     }
 
 }
 
 extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if etat != "" {
+            return etat
+        } else {
+            return "Guildwars"
+        }
+     }
+    
      func numberOfSections(in tableView: UITableView) -> Int {
         return 1
      }
@@ -96,7 +109,7 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
             case "Succes" :
                 if let delegateObject = delegate {
                     delegateObject.chargerDetails(succes: indexPath.row)
-            }
+                }
             default :
                 print("erreur switch ListViewController")
         }

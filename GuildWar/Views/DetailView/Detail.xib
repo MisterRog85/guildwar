@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Detail" customModule="GuildWar" customModuleProvider="target">
             <connections>
+                <outlet property="Close" destination="5Fb-my-Res" id="mmi-kq-pup"/>
                 <outlet property="maDescription" destination="pce-qE-bI9" id="ada-3D-gSZ"/>
                 <outlet property="mesRequirements" destination="oub-WY-y2y" id="g36-Dh-237"/>
                 <outlet property="monImage" destination="JLY-8P-Rsn" id="hVz-4s-GJc"/>
@@ -45,6 +46,13 @@
                     <color key="textColor" red="1" green="0.47860249412578293" blue="0.40892125932684786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fb-my-Res">
+                    <rect key="frame" x="364" y="44" width="50" height="50"/>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="closeViewWithSender:" destination="-1" eventType="touchUpInside" id="mSi-dt-KtW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -53,7 +61,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JLY-8P-Rsn" secondAttribute="bottom" constant="596" id="I11-50-50d"/>
                 <constraint firstItem="JLY-8P-Rsn" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="4" id="MYQ-eF-cJS"/>
                 <constraint firstItem="pce-qE-bI9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="O8J-YX-JCr"/>
+                <constraint firstItem="5Fb-my-Res" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Pbw-XR-78G"/>
                 <constraint firstItem="oub-WY-y2y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Vv5-3b-GGI"/>
+                <constraint firstItem="5Fb-my-Res" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="364" id="b0K-VQ-F1A"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Fb-my-Res" secondAttribute="trailing" id="cQC-1r-Hp9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5Fb-my-Res" secondAttribute="bottom" constant="768" id="cnS-tu-tr3"/>
                 <constraint firstItem="JLY-8P-Rsn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="taN-c9-v95"/>
                 <constraint firstItem="oub-WY-y2y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="348" id="tjk-J3-gen"/>
                 <constraint firstItem="pce-qE-bI9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="304" id="zDu-Mc-2FV"/>
@@ -64,6 +76,7 @@
         </view>
     </objects>
     <resources>
+        <image name="close" width="161" height="161"/>
         <image name="guildwars2" width="1920" height="1200"/>
     </resources>
 </document>
