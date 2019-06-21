@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Structure pour l'objet Groupe
+ */
 struct Groupe {
     var id: String
     var name: String

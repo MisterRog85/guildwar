@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Structure pour l'objet Succes
+ */
 struct Succes: Decodable {
     var id: Int
     var name: String

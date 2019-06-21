@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Structure pour l'objet Categorie
+ */
 struct Categorie : Decodable {
     var id: Int
     var name: String

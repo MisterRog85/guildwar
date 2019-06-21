@@ -8,8 +8,12 @@
 
 import UIKit
 
+/**
+ Classe cellule de type UITableCell. Elle est vide car on utilise un modèle préconçu
+ */
 class Cellule: UITableViewCell {
-
+    
+    ///Fonction permettant de réutiliser autant que l'on veut la cellule
     override func prepareForReuse() {
         super.prepareForReuse()
     }

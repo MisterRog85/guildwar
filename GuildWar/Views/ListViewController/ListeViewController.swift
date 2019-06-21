@@ -8,19 +8,32 @@
 
 import UIKit
 
+/**
+ Protocol pour le délégué d'affichage (les fonctions sont dans le ViewController)
+ */
 protocol AffichageDelegate {
     func afficherElements(type: String, elem: [Int]?)
     func chargerDetails(succes: Int)
 }
 
+/**
+ Classe pour gérer la vue liste. La vue liste est utilisée pour afficher les groupes, les catégories et les succés. Implémente le ChargemtnDelegate
+ */
 class ListeViewController: UIViewController, ChargementDelegate {
     
     var delegate: AffichageDelegate?
     
+    ///variable qui contiendra l'état d'affichage en cours de la liste (groupe, catégorie ou succès)
     var etat: String = ""
     
+    ///L'élément de type UITableView
     @IBOutlet weak var laListe: UITableView!
     
+    /**
+     La fonction viewDidLoad
+     On implémente la source de données (datasource) et le délégué(delegate) de la liste ici.
+     On incorpore un élément de type cellule dans la liste ici.
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,20 +44,26 @@ class ListeViewController: UIViewController, ChargementDelegate {
         laListe.register(nib, forCellReuseIdentifier: "Cellule")
     }
     
+    /**
+     Fonction pour recharger les éléments qui seront affichés dans la liste
+     On introduit un effet de transition.
+     */
     func chargerElement(type: String) {
         etat = type
         UIView.transition(with: laListe,
                           duration: 0.35,
                           options: .transitionCrossDissolve,
                           animations: { self.laListe.reloadData() })
-        //laListe.reloadData()
-        print ("appel delegate")
     }
 
 }
 
+/**
+ Extension de la classe ListeViewController, implémente le datasource et le délégué
+ */
 extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
     
+    /// fonction pour ajouter un header à la liste, qui contient le nom de l'état en cours d'affichage(Groupe, Catégories ou Succès
      func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if etat != "" {
             return etat
@@ -53,10 +72,12 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
         }
      }
     
+    ///définition du nombre de sections de la liste
      func numberOfSections(in tableView: UITableView) -> Int {
         return 1
      }
     
+    ///définition du nombre de ligne dans la liste en fonction de la longueur du tableau d'un élément particulier
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var taille: Int = 0
         switch etat {
@@ -72,9 +93,10 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
         return taille
      }
     
+    ///C'est ici que l'on rempli la cellule avec les informations issues d'un élément particulier
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cellule", for: indexPath) as! Cellule
-        
+
         //a ameliorer
         switch etat {
         case "Groupe":
@@ -96,6 +118,7 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
          return cell
      }
     
+    ///fonction d'écoute de l'interaction entre l'utilisateur et la liste. En cas d'appuie et en fonction de l'état dans lequel se situe la liste on déclenche une action particulière
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch etat {
             case "Groupe" :

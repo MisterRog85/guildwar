@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ViewController" class="dashAnchor"></a>
+    <a title="ViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CategorieService.html">CategorieService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Cellule.html">Cellule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Constants.html">Constants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Constants/Requete.html">– Requete</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Constants/JsonKeys.html">– JsonKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Detail.html">Detail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GroupService.html">GroupService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ListeViewController.html">ListeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceAPI.html">ServiceAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SuccesService.html">SuccesService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Guildwar.html">Guildwar</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AffichageDelegate.html">AffichageDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ChargementDelegate.html">ChargementDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SuppressionDelegate.html">SuppressionDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Categorie.html">Categorie</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Groupe.html">Groupe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Succes.html">Succes</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AffichageDelegate.html">AffichageDelegate</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/SuppressionDelegate.html">SuppressionDelegate</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>ViewController principal de l&#39;application, c&#39;est ici que l&#39;on charge les vues et que l&#39;on ordonne leur mise à jour en déclenchant les appels API.
+Implémente AffichageDelegate et SuppressionDelegate.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@GuildWar@objc(cs)ViewController(py)maVue"></a>
+                    <a name="//apple_ref/swift/Property/maVue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@GuildWar@objc(cs)ViewController(py)maVue">maVue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">maVue</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8GuildWar14ViewControllerC8vueListeAA0fcD0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/vueListe" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8GuildWar14ViewControllerC8vueListeAA0fcD0CSgvp">vueListe</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Les objets du type de mes vues</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">vueListe</span><span class="p">:</span> <span class="kt"><a href="../Classes/ListeViewController.html">ListeViewController</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8GuildWar14ViewControllerC9vueDetailAA0F0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/vueDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8GuildWar14ViewControllerC9vueDetailAA0F0CSgvp">vueDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">vueDetail</span><span class="p">:</span> <span class="kt"><a href="../Classes/Detail.html">Detail</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8GuildWar14ViewControllerC7serviceAA10ServiceAPICvp"></a>
+                    <a name="//apple_ref/swift/Property/service" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8GuildWar14ViewControllerC7serviceAA10ServiceAPICvp">service</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On initialise la partie service vers l&#39;API de l&#39;application</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span><span class="p">:</span> <span class="kt"><a href="../Classes/ServiceAPI.html">ServiceAPI</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@GuildWar@objc(cs)ViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@GuildWar@objc(cs)ViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fonction ViewDidLoad du viewController, c&#39;est ici que l&#39;on ajoute à la vue le nib contenant la vue liste. On lance aussi le premier appel service qui récupère la liste des groupes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8GuildWar14ViewControllerC16afficherElements4type4elemySS_SaySiGSgtF"></a>
+                    <a name="//apple_ref/swift/Method/afficherElements(type:elem:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8GuildWar14ViewControllerC16afficherElements4type4elemySS_SaySiGSgtF">afficherElements(type:elem:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fonction qui appel le chargement de certains éléments en fonction de l&#39;état dans lequel se trouve la vue liste.
+Fonction implémentant le AffichageDelegate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">afficherElements</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">elem</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>l&#39;état dans lequel se trouve la vue liste, de type string</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>elem</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>les éléments à passer pour le chargements des données, ce sont les tableaux contenant les ids des categories ou des succès que l&#39;on souhaite récupérer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8GuildWar14ViewControllerC14chargerDetails6succesySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/chargerDetails(succes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8GuildWar14ViewControllerC14chargerDetails6succesySi_tF">chargerDetails(succes:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fonction permettant le chargment de la vue détail pour un succès. On utilise là encore l&#39;ajout de vue à la vue principale avec la méthode addSubView.
+On itialise ici l&#39;objet de la classe Detail de type Succes.
+On ajoute une animation pour l&#39;apparition de la vue.
+Implémente AffichageDelegate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">chargerDetails</span><span class="p">(</span><span class="nv">succes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>succes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>l&#39;id du succes que l&#39;on souhaite afficher, de type Int</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8GuildWar14ViewControllerC16supprimerDetailsyyF"></a>
+                    <a name="//apple_ref/swift/Method/supprimerDetails()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8GuildWar14ViewControllerC16supprimerDetailsyyF">supprimerDetails()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fonction permettant la suppression de la vue détail de la vue principale. On utilise la méthode removeFromParent.
+On réinitialise la vue avec la liste au point de départ (affichage des groupes)
+Implémente SuppressionDelegate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">supprimerDetails</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-06-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
