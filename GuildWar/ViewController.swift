@@ -36,7 +36,12 @@ class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
         self.vueListe.delegate = self
         
         service.delegate  = self.vueListe
-        service.getGroupe()        
+        if GroupService.shared.getGroupeCount() != 0 {
+            GroupService.shared.resetGroupe()
+            CategorieService.shared.resetCategorie()
+            SuccesService.shared.resetSucces()
+        }
+        service.getGroupe()
     }
     
     /**

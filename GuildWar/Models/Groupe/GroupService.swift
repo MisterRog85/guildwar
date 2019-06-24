@@ -53,4 +53,11 @@ class GroupService {
     func getGroupeCount() -> Int {
         return lesGroupes.count
     }
+    
+    /**
+     Fonction pour vider le tableau
+     */
+    func resetGroupe() {
+        lesGroupes.removeAll()
+    }
 }

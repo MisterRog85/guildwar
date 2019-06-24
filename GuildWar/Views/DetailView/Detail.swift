@@ -48,6 +48,15 @@ class Detail: UIViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+        } else {
+            print("Portrait")
+        }
+    }
+    
     ///Action relié à un bouton pour fermer la vue, appel du délégué
     @IBAction func closeView(sender: UIButton) {
         if let delegateObject = delegate {

@@ -53,4 +53,11 @@ class CategorieService {
     func getCategorieCount() -> Int {
         return lesCategories.count
     }
+    
+    /**
+     Fonction pour vider le tableau
+     */
+    func resetCategorie() {
+        lesCategories.removeAll()
+    }
 }

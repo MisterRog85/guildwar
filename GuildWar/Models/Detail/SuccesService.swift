@@ -60,4 +60,11 @@ class SuccesService {
     func getSuccesCount() -> Int {
         return lesSucces.count
     }
+    
+    /**
+     Fonction pour vider le tableau
+     */
+    func resetSucces() {
+        lesSucces.removeAll()
+    }
 }
