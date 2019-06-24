@@ -48,20 +48,30 @@ class Detail: UIViewController {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        if UIDevice.current.orientation.isLandscape {
-            print("Landscape")
-        } else {
-            print("Portrait")
-        }
-    }
-    
     ///Action relié à un bouton pour fermer la vue, appel du délégué
     @IBAction func closeView(sender: UIButton) {
         if let delegateObject = delegate {
             delegateObject.supprimerDetails()
         }
+    }
+    
+    ///Fonction pour partager le succès visualisé
+    @IBAction func shareTextButton(_ sender: UIButton) {
+        
+        // text to share
+        let text = "Voir le succès Guildwars 2 suivant : "+objet.name
+        
+        // set up activity view controller
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        
     }
 }
 

@@ -25,7 +25,8 @@ class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
     let service = ServiceAPI()
     
     /**
-     Fonction ViewDidLoad du viewController, c'est ici que l'on ajoute à la vue le nib contenant la vue liste. On lance aussi le premier appel service qui récupère la liste des groupes
+     Fonction ViewDidLoad du viewController, c'est ici que l'on ajoute à la vue le nib contenant la vue liste. On lance aussi le premier appel service qui récupère la liste des groupes.
+     On supprime les différents tableaux à l'initlisation de la vue pour éviter les doublons
      */
     override func viewDidLoad() {
         super.viewDidLoad()

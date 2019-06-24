@@ -65,7 +65,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzW-yu-ras">
-                    <rect key="frame" x="20" y="488" width="77" height="48"/>
+                    <rect key="frame" x="20" y="488" width="76.5" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -82,19 +82,35 @@
                     <color key="textColor" red="1" green="0.47860249412578293" blue="0.40892125932684786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxQ-Es-rrw">
+                    <rect key="frame" x="20" y="30" width="35" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2NF-xa-D0O"/>
+                        <constraint firstAttribute="width" constant="35" id="j0b-8N-6nE"/>
+                    </constraints>
+                    <state key="normal" image="share"/>
+                    <connections>
+                        <action selector="shareTextButton:" destination="-1" eventType="touchUpInside" id="10h-D9-1CT"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="oub-WY-y2y" firstAttribute="width" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="1ly-fM-9l1"/>
                 <constraint firstItem="JLY-8P-Rsn" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="9j2-ED-lnD"/>
                 <constraint firstItem="oub-WY-y2y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Ae2-yq-TQR"/>
                 <constraint firstItem="pce-qE-bI9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="556" id="FOO-yY-kVf"/>
                 <constraint firstItem="JLY-8P-Rsn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Luk-YC-Ixz"/>
                 <constraint firstItem="JLY-8P-Rsn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ma6-oB-9ih"/>
                 <constraint firstItem="oub-WY-y2y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="597" id="N6h-1V-09L"/>
+                <constraint firstItem="sxQ-Es-rrw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="NFe-uK-GSF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Fb-my-Res" secondAttribute="trailing" constant="20" id="PGI-Kf-Zfq"/>
                 <constraint firstItem="LzW-yu-ras" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="QgC-43-dxK"/>
                 <constraint firstItem="pce-qE-bI9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="aXF-fI-LPM"/>
                 <constraint firstItem="5Fb-my-Res" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ez4-72-Y9N"/>
+                <constraint firstItem="sxQ-Es-rrw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="hV5-dA-Ldh"/>
+                <constraint firstItem="pce-qE-bI9" firstAttribute="width" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="iH2-gL-pgZ"/>
+                <constraint firstItem="LzW-yu-ras" firstAttribute="width" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="kZ0-EH-aqg"/>
                 <constraint firstItem="LzW-yu-ras" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="468" id="vQC-9f-G6b"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -104,6 +120,8 @@
                     <exclude reference="Luk-YC-Ixz"/>
                     <exclude reference="Ma6-oB-9ih"/>
                     <exclude reference="PGI-Kf-Zfq"/>
+                    <exclude reference="NFe-uK-GSF"/>
+                    <exclude reference="hV5-dA-Ldh"/>
                     <exclude reference="QgC-43-dxK"/>
                     <exclude reference="vQC-9f-G6b"/>
                     <exclude reference="FOO-yY-kVf"/>
@@ -119,6 +137,8 @@
                     <include reference="Luk-YC-Ixz"/>
                     <include reference="Ma6-oB-9ih"/>
                     <include reference="PGI-Kf-Zfq"/>
+                    <include reference="NFe-uK-GSF"/>
+                    <include reference="hV5-dA-Ldh"/>
                     <include reference="QgC-43-dxK"/>
                     <include reference="vQC-9f-G6b"/>
                     <include reference="FOO-yY-kVf"/>
@@ -134,5 +154,6 @@
     <resources>
         <image name="close" width="161" height="161"/>
         <image name="guildwars2" width="1920" height="1200"/>
+        <image name="share" width="142" height="202"/>
     </resources>
 </document>
