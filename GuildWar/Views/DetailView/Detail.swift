@@ -15,6 +15,7 @@ protocol SuppressionDelegate {
 
 /**
  Classe pour la gestion de la vue du détail d'un succès, de type UIViewController
+ Comprend la fonctionnalité de partage
  */
 class Detail: UIViewController {
     
@@ -41,10 +42,6 @@ class Detail: UIViewController {
             self.monTitre?.text = objet.name
             self.maDescription?.text = objet.description
             self.mesRequirements?.text = objet.requirement
-        } else {
-            self.monTitre?.text = "Coucou"
-            self.maDescription?.text = "lorem ipsum"
-            self.mesRequirements?.text = "etgsdfgsdgsgserbsddgsetr"
         }
     }
     
@@ -57,21 +54,15 @@ class Detail: UIViewController {
     
     ///Fonction pour partager le succès visualisé
     @IBAction func shareTextButton(_ sender: UIButton) {
-        
-        // text to share
         let text = "Voir le succès Guildwars 2 suivant : "+objet.name
         
-        // set up activity view controller
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        activityViewController.popoverPresentationController?.sourceView = self.view
         
-        // exclude some activity types from the list (optional)
         activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
         
-        // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
-        
     }
 }
 

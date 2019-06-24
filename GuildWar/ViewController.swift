@@ -37,6 +37,7 @@ class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
         self.vueListe.delegate = self
         
         service.delegate  = self.vueListe
+        //on réinitialise les tableaux à chaque lancement de l'application pour éviter les doublons
         if GroupService.shared.getGroupeCount() != 0 {
             GroupService.shared.resetGroupe()
             CategorieService.shared.resetCategorie()
