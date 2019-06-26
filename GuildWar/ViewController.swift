@@ -13,7 +13,7 @@ import Moya
  ViewController principal de l'application, c'est ici que l'on charge les vues et que l'on ordonne leur mise à jour en déclenchant les appels API.
  Implémente AffichageDelegate et SuppressionDelegate.
  */
-class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet var maVue: UIView!
     
@@ -34,9 +34,9 @@ class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
         self.vueListe = ListeViewController(nibName: "ListeViewController", bundle: nil)
         self.view.addSubview(vueListe.view)
         self.vueListe.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        self.vueListe.delegate = self
+        //self.vueListe.delegate = self
         
-        service.delegate  = self.vueListe
+        //service.delegate  = self.vueListe
         //on réinitialise les tableaux à chaque lancement de l'application pour éviter les doublons
         if GroupService.shared.getGroupeCount() != 0 {
             GroupService.shared.resetGroupe()
@@ -80,7 +80,7 @@ class ViewController: UIViewController, AffichageDelegate, SuppressionDelegate {
             self.view.addSubview(self.vueDetail.view)
         }, completion: nil)
         self.vueDetail.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        self.vueDetail.delegate = self
+        //self.vueDetail.delegate = self
     }
     
     /**

@@ -12,14 +12,14 @@ import UIKit
  Protocol pour le délégué d'affichage (les fonctions sont dans le ViewController)
  */
 protocol AffichageDelegate {
-    func afficherElements(type: String, elem: [Int]?)
+    func chargerElement(type: String, elem: [Int]?)
     func chargerDetails(succes: Int)
 }
 
 /**
  Classe pour gérer la vue liste. La vue liste est utilisée pour afficher les groupes, les catégories et les succés. Implémente le ChargemtnDelegate
  */
-class ListeViewController: UIViewController, ChargementDelegate {
+class ListeViewController: UIViewController {
     
     var delegate: AffichageDelegate?
     
@@ -48,7 +48,7 @@ class ListeViewController: UIViewController, ChargementDelegate {
      Fonction pour recharger les éléments qui seront affichés dans la liste
      On introduit un effet de transition.
      */
-    func chargerElement(type: String) {
+    func chargementTermine(type: String) {
         etat = type
         UIView.transition(with: laListe,
                           duration: 0.35,
@@ -62,15 +62,6 @@ class ListeViewController: UIViewController, ChargementDelegate {
  Extension de la classe ListeViewController, implémente le datasource et le délégué
  */
 extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    /// fonction pour ajouter un header à la liste, qui contient le nom de l'état en cours d'affichage(Groupe, Catégories ou Succès
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if etat != "" {
-            return etat
-        } else {
-            return "Guildwars"
-        }
-     }
     
     ///définition du nombre de sections de la liste
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -123,11 +114,11 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
         switch etat {
             case "Groupe" :
                 if let delegateObject = delegate {
-                    delegateObject.afficherElements(type: "Categorie", elem: GroupService.shared.getGroupe(id: indexPath.row).categorie)
+                    delegateObject.chargerElement(type: "Categorie", elem: GroupService.shared.getGroupe(id: indexPath.row).categorie)
                 }
             case "Categorie" :
                 if let delegateObject = delegate {
-                    delegateObject.afficherElements(type: "Succes", elem: CategorieService.shared.getCategorie(id: indexPath.row).achievements)
+                    delegateObject.chargerElement(type: "Succes", elem: CategorieService.shared.getCategorie(id: indexPath.row).achievements)
                 }
             case "Succes" :
                 if let delegateObject = delegate {
