@@ -14,11 +14,10 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
     var vueDetail: Detail!
     
     let service = ServiceAPI()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         chargerElement(type: "Groupe", elem: nil)
         
         service.delegate = self
@@ -33,6 +32,7 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
             vueGroupe.etat = "Groupe"
             navigationController?.pushViewController(vueGroupe, animated: true)
             vueGroupe.navigationItem.title = "Groupe";
+            vueGroupe.navigationItem.setHidesBackButton(true, animated:true);
         case "Categorie" :
             let vueCat = ListeViewController(nibName: "ListeViewController", bundle: nil)
             vueCat.delegate = self
@@ -48,7 +48,6 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
         default :
             print ("erreur switch navigation")
         }
-
     }
     
     func chargerElement(type: String, elem: [Int]?) {
@@ -84,15 +83,5 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
         activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up;
         
         self.present(activityViewController, animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func buttonPressShowDetails(_ sender: UIButton) {
-        //performSegue(withIdentifier: "SegueFromRootToFirst", sender: self)
-        chargerElement(type: "Groupe", elem: nil)
-        /*service.getGroupe()
-        navigationController?.pushViewController(vueListe, animated: true)
-        vueListe.navigationItem.title = "Groupe View";*/
-
     }
 }
