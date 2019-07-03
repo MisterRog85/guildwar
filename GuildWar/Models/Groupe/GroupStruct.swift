@@ -11,10 +11,11 @@ import Foundation
 /**
  Structure pour l'objet Groupe
  */
-struct Groupe {
+struct Groupe: Codable {
     var id: String
     var name: String
     var description: String
     var order: Int
-    var categorie: [Int]
+    var categories: [Int]
 }
+

@@ -11,12 +11,10 @@ import Foundation
 /**
  Structure pour l'objet Succes
  */
-struct Succes: Decodable {
+struct Succes: Codable {
     var id: Int
     var name: String
     var description: String?
     var requirement: String?
     var locked_text: String?
-    var type: String?
-    var flags: [String]
 }

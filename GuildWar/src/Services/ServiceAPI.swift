@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-import SwiftyJSON
 
 protocol ChargementDelegate {
     func chargementTermine(type: String)
@@ -23,6 +22,8 @@ public class ServiceAPI {
     
     let provider = MoyaProvider<Guildwar>()
     
+    let decoder = JSONDecoder()
+    
     /**
      Fonction permettant de récuperer la liste de groupe
      Pour chaque élément reçu, on appel la fonction getGroupeComplet pour avoir toutes les informations concernant ce groupe
@@ -32,12 +33,16 @@ public class ServiceAPI {
             switch result {
             case let .success(moyaResponse):
                 do {
-                    let jsons = try JSON(data: moyaResponse.data)
-                    for i in 0..<jsons.count {
-                        self.getGroupeComplet(id: jsons[i].string!, termine: (i == jsons.count - 1))
+                    let str = String(decoding: moyaResponse.data, as: UTF8.self)
+                    let array = str.components(separatedBy: ",")
+                    for i in 0..<array.count {
+                        var id = array[i].replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        id = id.replacingOccurrences(of: "\n", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        id = id.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        id = id.replacingOccurrences(of: "[", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        id = id.replacingOccurrences(of: "]", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        self.getGroupeComplet(id: id, termine: (i == array.count - 1))
                     }
-                } catch {
-                    print("erreur de décodage")
                 }
             case .failure(_):
                 print("erreur de contact API : ")
@@ -69,10 +74,8 @@ public class ServiceAPI {
      - parameter termine: booléen qui passe à true quand on ajoute le dernier groupe de l'API
      */
     public func setGroupeComplet(myData: Data, termine: Bool) {
-        let jsonObject = try! JSON(data: myData)
-        let swiftObject = Groupe(id: jsonObject[Constants.JsonKeys.id].string!, name: jsonObject[Constants.JsonKeys.name].string!, description: jsonObject[Constants.JsonKeys.description].string!, order: jsonObject[Constants.JsonKeys.order].int!, categorie: jsonObject[Constants.JsonKeys.categories].arrayObject! as! [Int])
-        GroupService.shared.add(groupe: swiftObject)
-        //print (GroupService.shared.getGroupe(id: 0).name)
+        let groupe = try! self.decoder.decode(Groupe.self, from: myData)
+        GroupService.shared.add(groupe: groupe)
         if termine == true {
             if let delegateObject = delegate {
                 delegateObject.chargementTermine(type: "Groupe")
@@ -90,10 +93,7 @@ public class ServiceAPI {
                 switch result {
                 case let .success(moyaResponse):
                     do {
-                        let json = try JSON(data: moyaResponse.data)
-                        self.setCategorie(jsonObject: json, termine: (id == ids.last))
-                    } catch {
-                        print("erreur de décodage")
+                        self.setCategorie(myData: moyaResponse.data, termine: (id == ids.last))
                     }
                 case .failure(_):
                     print ("erreur de contact API")
@@ -107,9 +107,9 @@ public class ServiceAPI {
      - parameter jsonObject: l'objet JSON contenant une catégorie
      - parameter termine: booléen indiquant si on traite la dernière catégorie pour un groupe
      */
-    public func setCategorie(jsonObject: JSON, termine: Bool) {
-        let swiftObject = Categorie(id: jsonObject[Constants.JsonKeys.id].int!, name: jsonObject[Constants.JsonKeys.name].string!, description: jsonObject[Constants.JsonKeys.description].string, order: jsonObject[Constants.JsonKeys.order].int!, icon: jsonObject[Constants.JsonKeys.icon].url!, achievements: jsonObject[Constants.JsonKeys.achievements].arrayObject! as! [Int]) //description peut être vide
-        CategorieService.shared.add(categorie: swiftObject)
+    public func setCategorie(myData: Data, termine: Bool) {
+        let categorie = try! self.decoder.decode(Categorie.self, from: myData)
+        CategorieService.shared.add(categorie: categorie)
         if termine == true {
             if let delegateObject = delegate {
                 delegateObject.chargementTermine(type: "Categorie")
@@ -134,10 +134,7 @@ public class ServiceAPI {
             switch result {
             case let .success(moyaResponse):
                 do {
-                    let jsons = try! JSON(data:moyaResponse.data)
-                    for i in 0..<jsons.count {
-                        self.setListeSucces(myData: jsons[i], termine: (i == jsons.count-1))
-                    }
+                    self.setListeSucces(myData: moyaResponse.data)
                 }
             case .failure(_):
                 print("erreur de contact API")
@@ -148,16 +145,12 @@ public class ServiceAPI {
     /**
      Fonction permettant de remplir le tableau de succès
      - parameter myData: les données récupérées depuis l'API au format JSON
-     - parameter termine: booléen indiquant si on traite le dernier succès pour une catégorie
      */
-    public func setListeSucces(myData: JSON, termine: Bool) {
-        let swiftObject = Succes(id: myData[Constants.JsonKeys.id].int!, name: myData[Constants.JsonKeys.name].string!, description: myData[Constants.JsonKeys.description].string, requirement: myData[Constants.JsonKeys.requirement].string, locked_text: myData[Constants.JsonKeys.locked_text].string, type: myData[Constants.JsonKeys.type].string, flags: myData[Constants.JsonKeys.flags].arrayObject! as! [String])
-        SuccesService.shared.add(succes: swiftObject)
-        if termine == true {
-            if let delegateObject = delegate {
-                delegateObject.chargementTermine(type: "Succes")
-            }
+    public func setListeSucces(myData: Data) {
+        let succes = try! self.decoder.decode([Succes].self, from: myData)
+        SuccesService.shared.addAll(liste: succes)
+        if let delegateObject = delegate {
+            delegateObject.chargementTermine(type: "Succes")
         }
     }
-
 }

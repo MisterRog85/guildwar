@@ -29,6 +29,11 @@ class SuccesService {
         lesSucces.append(succes)
     }
     
+    func addAll(liste: [Succes]) {
+        for succes in liste {
+            self.add(succes: succes)
+        }
+    }
     /**
      Fonction qui renvoie tout le tableau
      - returns: le tableau
@@ -46,7 +51,7 @@ class SuccesService {
         var succes: Succes! = nil
         for i in 0..<(lesSucces.count-1) {
             if i == id {
-                succes = Succes(id: lesSucces[i].id, name: lesSucces[i].name, description: lesSucces[i].description, requirement: lesSucces[i].requirement, locked_text: lesSucces[i].locked_text, type: lesSucces[i].type, flags: lesSucces[i].flags )
+                succes = Succes(id: lesSucces[i].id, name: lesSucces[i].name, description: lesSucces[i].description, requirement: lesSucces[i].requirement, locked_text: lesSucces[i].locked_text)//, type: lesSucces[i].type, flags: lesSucces[i].flags )
                 break
             }
         }

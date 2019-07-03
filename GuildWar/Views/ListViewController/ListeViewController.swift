@@ -114,7 +114,7 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
         switch etat {
             case "Groupe" :
                 if let delegateObject = delegate {
-                    delegateObject.chargerElement(type: "Categorie", elem: GroupService.shared.getGroupe(id: indexPath.row).categorie)
+                    delegateObject.chargerElement(type: "Categorie", elem: GroupService.shared.getGroupe(id: indexPath.row).categories)
                 }
             case "Categorie" :
                 if let delegateObject = delegate {

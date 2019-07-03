@@ -11,7 +11,7 @@ import Foundation
 /**
  Structure pour l'objet Categorie
  */
-struct Categorie : Decodable {
+struct Categorie: Codable {
     var id: Int
     var name: String
     var description: String?
