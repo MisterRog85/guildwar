@@ -1,0 +1,432 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 27,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 36,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Categorie/CategorieStruct.swift",
+      "line": 15,
+      "symbol": "Categorie.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Categorie/CategorieStruct.swift",
+      "line": 16,
+      "symbol": "Categorie.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Categorie/CategorieStruct.swift",
+      "line": 17,
+      "symbol": "Categorie.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Categorie/CategorieStruct.swift",
+      "line": 18,
+      "symbol": "Categorie.order",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Categorie/CategorieStruct.swift",
+      "line": 19,
+      "symbol": "Categorie.icon",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Categorie/CategorieStruct.swift",
+      "line": 20,
+      "symbol": "Categorie.achievements",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Groupe/GroupStruct.swift",
+      "line": 15,
+      "symbol": "Groupe.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Groupe/GroupStruct.swift",
+      "line": 16,
+      "symbol": "Groupe.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Groupe/GroupStruct.swift",
+      "line": 17,
+      "symbol": "Groupe.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Groupe/GroupStruct.swift",
+      "line": 18,
+      "symbol": "Groupe.order",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/Groupe/GroupStruct.swift",
+      "line": 19,
+      "symbol": "Groupe.categorie",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 15,
+      "symbol": "Succes.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 16,
+      "symbol": "Succes.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 17,
+      "symbol": "Succes.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 18,
+      "symbol": "Succes.requirement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 19,
+      "symbol": "Succes.locked_text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 20,
+      "symbol": "Succes.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Models/SuccesStruct.swift",
+      "line": 21,
+      "symbol": "Succes.flags",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/ViewController.swift",
+      "line": 18,
+      "symbol": "ViewController.maVue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/ViewController.swift",
+      "line": 22,
+      "symbol": "ViewController.vueDetail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/DetailView/Detail.swift",
+      "line": 13,
+      "symbol": "SuppressionDelegate.supprimerDetails()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/DetailView/Detail.swift",
+      "line": 23,
+      "symbol": "Detail.monTitre",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/DetailView/Detail.swift",
+      "line": 24,
+      "symbol": "Detail.maDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/DetailView/Detail.swift",
+      "line": 25,
+      "symbol": "Detail.mesRequirements",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/DetailView/Detail.swift",
+      "line": 26,
+      "symbol": "Detail.Close",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/DetailView/Detail.swift",
+      "line": 31,
+      "symbol": "Detail.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/ListViewController/ListeViewController.swift",
+      "line": 15,
+      "symbol": "AffichageDelegate.afficherElements(type:elem:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/ListViewController/ListeViewController.swift",
+      "line": 16,
+      "symbol": "AffichageDelegate.chargerDetails(succes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/Views/ListViewController/ListeViewController.swift",
+      "line": 24,
+      "symbol": "ListeViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/API/Api.swift",
+      "line": 20,
+      "symbol": "Guildwar.groupe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/API/Api.swift",
+      "line": 21,
+      "symbol": "Guildwar.groupeComplet(idGroupe:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/API/Api.swift",
+      "line": 22,
+      "symbol": "Guildwar.categorie(idCat:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/API/Api.swift",
+      "line": 23,
+      "symbol": "Guildwar.listeSucces(ids:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/API/Api.swift",
+      "line": 24,
+      "symbol": "Guildwar.detail(idDet:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 15,
+      "symbol": "Constants.Requete.BaseURL",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 16,
+      "symbol": "Constants.Requete.Groupe",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 17,
+      "symbol": "Constants.Requete.Categorie",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 18,
+      "symbol": "Constants.Requete.Details",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 23,
+      "symbol": "Constants.JsonKeys.id",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 24,
+      "symbol": "Constants.JsonKeys.name",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 25,
+      "symbol": "Constants.JsonKeys.description",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 26,
+      "symbol": "Constants.JsonKeys.order",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 27,
+      "symbol": "Constants.JsonKeys.categories",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 28,
+      "symbol": "Constants.JsonKeys.icon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 29,
+      "symbol": "Constants.JsonKeys.achievements",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 30,
+      "symbol": "Constants.JsonKeys.requirement",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 31,
+      "symbol": "Constants.JsonKeys.locked_text",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 32,
+      "symbol": "Constants.JsonKeys.type",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Helpers/Constants.swift",
+      "line": 33,
+      "symbol": "Constants.JsonKeys.flags",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Services/ServiceAPI.swift",
+      "line": 13,
+      "symbol": "ChargementDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Services/ServiceAPI.swift",
+      "line": 14,
+      "symbol": "ChargementDelegate.chargerElement(type:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Services/ServiceAPI.swift",
+      "line": 22,
+      "symbol": "ServiceAPI.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/williamtomas/Documents/Dev/GuildWar/GuildWar/src/Services/ServiceAPI.swift",
+      "line": 24,
+      "symbol": "ServiceAPI.provider",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/williamtomas/Documents/Dev/GuildWar"
+}
