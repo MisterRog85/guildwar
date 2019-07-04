@@ -11,9 +11,9 @@ import Foundation
 /**
  Les méthodes pour l'objet Groupe
  */
-class GroupService {
+class GroupHelpers {
     /// permet d'appeler le init() d'où on veut
-    static let shared = GroupService()
+    static let shared = GroupHelpers()
     
     ///init
     private init() {}

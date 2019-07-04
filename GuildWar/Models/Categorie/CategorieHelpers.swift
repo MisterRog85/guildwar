@@ -11,9 +11,9 @@ import Foundation
 /**
  Les méthodes pour l'objet Catégorie
  */
-class CategorieService {
+class CategorieHelpers {
     /// permet d'appeler le init() d'où on veut
-    static let shared = CategorieService()
+    static let shared = CategorieHelpers()
     
     ///init
     private init() {}

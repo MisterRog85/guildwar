@@ -34,14 +34,10 @@ public class ServiceAPI {
             case let .success(moyaResponse):
                 do {
                     let str = String(decoding: moyaResponse.data, as: UTF8.self)
-                    let array = str.components(separatedBy: ",")
-                    for i in 0..<array.count {
-                        var id = array[i].replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
-                        id = id.replacingOccurrences(of: "\n", with: "", options: NSString.CompareOptions.literal, range: nil)
-                        id = id.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-                        id = id.replacingOccurrences(of: "[", with: "", options: NSString.CompareOptions.literal, range: nil)
-                        id = id.replacingOccurrences(of: "]", with: "", options: NSString.CompareOptions.literal, range: nil)
-                        self.getGroupeComplet(id: id, termine: (i == array.count - 1))
+                    for currentText in str.components(separatedBy: ",") {
+                        let id = currentText.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil).replacingOccurrences(of: "\n", with: "", options: NSString.CompareOptions.literal, range: nil).replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil).replacingOccurrences(of: "[", with: "", options: NSString.CompareOptions.literal, range: nil).replacingOccurrences(of: "]", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        self.getGroupeComplet(id: id, termine: (currentText == str.components(separatedBy: ",").last))
+                        
                     }
                 }
             case .failure(_):
@@ -75,7 +71,7 @@ public class ServiceAPI {
      */
     public func setGroupeComplet(myData: Data, termine: Bool) {
         let groupe = try! self.decoder.decode(Groupe.self, from: myData)
-        GroupService.shared.add(groupe: groupe)
+        GroupHelpers.shared.add(groupe: groupe)
         if termine == true {
             if let delegateObject = delegate {
                 delegateObject.chargementTermine(type: "Groupe")
@@ -109,7 +105,7 @@ public class ServiceAPI {
      */
     public func setCategorie(myData: Data, termine: Bool) {
         let categorie = try! self.decoder.decode(Categorie.self, from: myData)
-        CategorieService.shared.add(categorie: categorie)
+        CategorieHelpers.shared.add(categorie: categorie)
         if termine == true {
             if let delegateObject = delegate {
                 delegateObject.chargementTermine(type: "Categorie")
@@ -148,7 +144,7 @@ public class ServiceAPI {
      */
     public func setListeSucces(myData: Data) {
         let succes = try! self.decoder.decode([Succes].self, from: myData)
-        SuccesService.shared.addAll(liste: succes)
+        SuccesHelpers.shared.addAll(liste: succes)
         if let delegateObject = delegate {
             delegateObject.chargementTermine(type: "Succes")
         }

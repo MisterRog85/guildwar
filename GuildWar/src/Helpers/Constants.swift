@@ -18,18 +18,12 @@ public class Constants {
         static let Details = "ids"
     }
     
-    ///éléments utilisés pour naviguer simplement dans les JSON retournés par l'API
-    struct JsonKeys {
-        static let id = "id"
-        static let name = "name"
-        static let description = "description"
-        static let order = "order"
-        static let categories = "categories"
-        static let icon = "icon"
-        static let achievements = "achievements"
-        static let requirement = "requirement"
-        static let locked_text = "locked_text"
-        static let type = "type"
-        static let flags = "flags"
+    ///éléments qui définissent l'état de l'application
+    struct Etat {
+        static let groupe = "Groupe"
+        static let categorie = "Categorie"
+        static let succes = "Succes"
+        static let detail = "Detail"
+        static let cellule = "Cellule"
     }
 }

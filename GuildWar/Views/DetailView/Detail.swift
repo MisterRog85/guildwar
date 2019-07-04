@@ -21,7 +21,7 @@ class Detail: UIViewController {
     @IBOutlet weak var mesRequirements: UILabel!
     
     ///la variable de type objet qui contiendra les informations du succès que l'on souhaite afficher en détail
-    public var objet: Succes!
+    public var objet: Succes?
     
     /**
      La fonction viewDidLoad, c'est ici que l'on défini le contenu des éléments qui sont affichés.
@@ -30,10 +30,10 @@ class Detail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if objet != nil {
-            self.monTitre?.text = objet.name
-            self.maDescription?.text = objet.description
-            self.mesRequirements?.text = objet.requirement
+        if let obj = objet {
+            self.monTitre?.text = obj.name
+            self.maDescription?.text = obj.description
+            self.mesRequirements?.text = obj.requirement
         }
     }
 

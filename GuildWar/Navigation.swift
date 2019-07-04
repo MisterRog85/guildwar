@@ -24,7 +24,7 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chargerElement(type: "Groupe", elem: nil)
+        chargerElement(type: Constants.Etat.groupe, elem: nil)
         
         service.delegate = self
     }
@@ -40,7 +40,7 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
         vueListe.view.accessibilityIdentifier = etat
         navigationController?.pushViewController(vueListe, animated: true)
         vueListe.navigationItem.title = etat
-        if etat == "Groupe" { //pour empêcher le retour vers le rootViewController
+        if etat == Constants.Etat.groupe { //pour empêcher le retour vers le rootViewController
             vueListe.navigationItem.setHidesBackButton(true, animated:true)
         }
     }
@@ -52,12 +52,12 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
      */
     func chargementTermine(type: String) {
         switch type {
-        case "Groupe" :
-            self.afficherListe(etat: "Groupe")
-        case "Categorie" :
-            self.afficherListe(etat: "Categorie")
-        case "Succes" :
-            self.afficherListe(etat: "Succes")
+        case Constants.Etat.groupe :
+            self.afficherListe(etat: Constants.Etat.groupe)
+        case Constants.Etat.categorie :
+            self.afficherListe(etat: Constants.Etat.categorie)
+        case Constants.Etat.succes :
+            self.afficherListe(etat: Constants.Etat.succes)
         default :
             print ("erreur switch navigation")
         }
@@ -71,14 +71,14 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
      */
     func chargerElement(type: String, elem: [Int]?) {
         switch type {
-        case "Groupe" :
-            GroupService.shared.resetGroupe()
+        case Constants.Etat.groupe :
+            GroupHelpers.shared.resetGroupe()
             service.getGroupe()
-        case "Categorie" :
-            CategorieService.shared.resetCategorie()
+        case Constants.Etat.categorie :
+            CategorieHelpers.shared.resetCategorie()
             service.getCategorie(ids: elem!)
-        case "Succes" :
-            SuccesService.shared.resetSucces()
+        case Constants.Etat.succes :
+            SuccesHelpers.shared.resetSucces()
             service.getListeSucces(ids: elem!)
         default :
             print ("erreur chargerElement")
@@ -93,12 +93,12 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
      - parameter succes: l'id du succes que l'on souhaite afficher, de type Int
      */
     func chargerDetails(succes: Int) {
-        self.vueDetail = Detail(nibName: "Detail", bundle: nil)
-        self.vueDetail.objet = SuccesService.shared.getSucces(id: succes)
-        self.vueDetail.view.accessibilityIdentifier = "Detail"
+        self.vueDetail = Detail(nibName: Constants.Etat.detail, bundle: nil)
+        self.vueDetail.objet = SuccesHelpers.shared.getSucces(id: succes)
+        self.vueDetail.view.accessibilityIdentifier = Constants.Etat.detail
         navigationController?.pushViewController(self.vueDetail, animated: true)
         self.vueDetail.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareSucces(_:)))
-        self.vueDetail.navigationItem.title = SuccesService.shared.getSucces(id: succes).name;
+        self.vueDetail.navigationItem.title = SuccesHelpers.shared.getSucces(id: succes).name;
     }
     
     /**
@@ -106,13 +106,15 @@ class Navigation: UIViewController, AffichageDelegate, ChargementDelegate {
      Applique des éléments de popoverPresentationController pour a-bien afficher la bulle sous le bouton à droite dans le header
      */
     @objc func shareSucces(_ sender: UIBarButtonItem) {
-        let text = "Voir le succès Guildwars 2 suivant : "+self.vueDetail.objet.name
-        
-        let textToShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.barButtonItem = self.vueDetail.navigationItem.rightBarButtonItem
-        activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up;
-        
-        self.present(activityViewController, animated: true, completion: nil)
+        if let obj = self.vueDetail.objet {
+            let text = "Voir le succès Guildwars 2 suivant : " + obj.name
+            
+            let textToShare = [ text ]
+            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.barButtonItem = self.vueDetail.navigationItem.rightBarButtonItem
+            activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up;
+            
+            self.present(activityViewController, animated: true, completion: nil)
+        }
     }
 }

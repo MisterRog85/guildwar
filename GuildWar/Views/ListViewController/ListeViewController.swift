@@ -40,8 +40,8 @@ class ListeViewController: UIViewController {
         laListe.dataSource = self
         laListe.delegate = self
         
-        let nib = UINib(nibName: "Cellule", bundle: nil)
-        laListe.register(nib, forCellReuseIdentifier: "Cellule")
+        let nib = UINib(nibName: Constants.Etat.cellule, bundle: nil)
+        laListe.register(nib, forCellReuseIdentifier: Constants.Etat.cellule)
     }
     
     /**
@@ -72,12 +72,12 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var taille: Int = 0
         switch etat {
-        case "Groupe":
-            taille = GroupService.shared.getGroupeCount()
-        case "Categorie":
-            taille = CategorieService.shared.getCategorieCount()
-        case "Succes":
-            taille = SuccesService.shared.getSuccesCount()
+        case Constants.Etat.groupe:
+            taille = GroupHelpers.shared.getGroupeCount()
+        case Constants.Etat.categorie:
+            taille = CategorieHelpers.shared.getCategorieCount()
+        case Constants.Etat.succes:
+            taille = SuccesHelpers.shared.getSuccesCount()
         default:
             print ("erreur switch")
         }
@@ -86,20 +86,20 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
     
     ///C'est ici que l'on rempli la cellule avec les informations issues d'un élément particulier
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cellule", for: indexPath) as! Cellule
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Etat.cellule, for: indexPath) as! Cellule
 
         //a ameliorer
         switch etat {
-        case "Groupe":
-            let element = GroupService.shared.lesGroupes[indexPath.row]
+        case Constants.Etat.groupe:
+            let element = GroupHelpers.shared.lesGroupes[indexPath.row]
             cell.textLabel?.text = element.name
             cell.detailTextLabel?.text = element.description
-        case "Categorie":
-            let element = CategorieService.shared.lesCategories[indexPath.row]
+        case Constants.Etat.categorie:
+            let element = CategorieHelpers.shared.lesCategories[indexPath.row]
             cell.textLabel?.text = element.name
             cell.detailTextLabel?.text = element.description
-        case "Succes":
-            let element = SuccesService.shared.lesSucces[indexPath.row]
+        case Constants.Etat.succes:
+            let element = SuccesHelpers.shared.lesSucces[indexPath.row]
             cell.textLabel?.text = element.name
             cell.detailTextLabel?.text = element.description
         default:
@@ -112,15 +112,15 @@ extension ListeViewController: UITableViewDataSource, UITableViewDelegate {
     ///fonction d'écoute de l'interaction entre l'utilisateur et la liste. En cas d'appuie et en fonction de l'état dans lequel se situe la liste on déclenche une action particulière
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch etat {
-            case "Groupe" :
+            case Constants.Etat.groupe :
                 if let delegateObject = delegate {
-                    delegateObject.chargerElement(type: "Categorie", elem: GroupService.shared.getGroupe(id: indexPath.row).categories)
+                    delegateObject.chargerElement(type: Constants.Etat.categorie, elem: GroupHelpers.shared.getGroupe(id: indexPath.row).categories)
                 }
-            case "Categorie" :
+            case Constants.Etat.categorie :
                 if let delegateObject = delegate {
-                    delegateObject.chargerElement(type: "Succes", elem: CategorieService.shared.getCategorie(id: indexPath.row).achievements)
+                    delegateObject.chargerElement(type: Constants.Etat.succes, elem: CategorieHelpers.shared.getCategorie(id: indexPath.row).achievements)
                 }
-            case "Succes" :
+            case Constants.Etat.succes :
                 if let delegateObject = delegate {
                     delegateObject.chargerDetails(succes: indexPath.row)
                 }
