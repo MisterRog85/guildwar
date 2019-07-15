@@ -7,12 +7,15 @@
 //
 
 import XCTest
+import Moya
 
 class GuildWarUITests: XCTestCase {
+    
+    var app: XCUIApplication!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        super.setUp()
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -20,15 +23,64 @@ class GuildWarUITests: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
+        app = XCUIApplication()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    /**
+     Test indiquant que nous sommes bien au niveau groupe lors du lancement de l'application
+     */
+    func testLancement() {
+     
+        XCTAssertTrue(app.isDisplayingGroupe)
     }
+    
+    func testCat() {
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 10)
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        //sleep(5)
+        XCTAssertTrue(app.isDisplayingCat)
+    }
+    
+    func testSucces() {
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 10)
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 10)
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        //sleep(5)
+        XCTAssertTrue(app.isDisplayingSucces)
+    }
+    
+    /*func waiterResultWithExpextation() -> XCTWaiter.Result {
+        let myPredicate = NSPredicate(format: "exists == true")
+        let myExpectation = expectation(for: myPredicate, evaluatedWith: app.isDisplayingCat, handler: nil)
+        let result = XCTWaiter().wait(for: [myExpectation], timeout: 5)
+        return result
+    }
+    
+    func testWaiterCompletionXCTPredicate() {
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 5)
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        XCTAssertTrue(waiterResultWithExpextation() == .completed)
+        
+    }*/
 
+}
+
+extension XCUIApplication {
+    var isDisplayingGroupe: Bool {
+        return otherElements["Groupe"].exists
+    }
+    
+    var isDisplayingCat: Bool {
+        return otherElements["Categorie"].exists
+    }
+    
+    var isDisplayingSucces: Bool {
+        return otherElements["Succes"].exists
+    }
 }

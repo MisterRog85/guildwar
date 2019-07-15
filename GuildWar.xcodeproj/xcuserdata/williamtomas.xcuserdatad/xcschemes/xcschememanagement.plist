@@ -7,7 +7,35 @@
 		<key>GuildWar.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>ScreenshotsUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>231D528F22D4BC4B003A8DA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23860B0922A7ED1B006DA385</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23860B1D22A7ED21006DA385</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23860B2822A7ED21006DA385</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

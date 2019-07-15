@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ScreenshotsUITests.xctest' tests='6' failures='0'>
+  <testsuite name='GuildWarTests.GuildWarTests' tests='2' failures='0'>
+    <testcase classname='GuildWarTests.GuildWarTests' name='testExample' time='0.005'/>
+    <testcase classname='GuildWarTests.GuildWarTests' name='testPerformanceExample' time='0.473'/>
+  </testsuite>
+  <testsuite name='GuildWarUITests.GuildWarUITests' tests='3' failures='0'>
+    <testcase classname='GuildWarUITests.GuildWarUITests' name='testCat' time='7.415'/>
+    <testcase classname='GuildWarUITests.GuildWarUITests' name='testLancement' time='7.287'/>
+    <testcase classname='GuildWarUITests.GuildWarUITests' name='testSucces' time='9.305'/>
+  </testsuite>
+  <testsuite name='ScreenshotsUITests.ScreenshotsUITests' tests='1' failures='0'>
+    <testcase classname='ScreenshotsUITests.ScreenshotsUITests' name='testExample' time='18.260'/>
+  </testsuite>
+</testsuites>
