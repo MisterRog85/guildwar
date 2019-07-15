@@ -25,7 +25,6 @@ platform :ios do
   lane :tests do
   run_tests(workspace: "GuildWar.xcworkspace",
             devices: ["iPad Air 2"],
-            # slack_url: "https://hooks.slack.com/services/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",
             scheme: "GuildWarUITests")
   end
 
@@ -33,6 +32,7 @@ platform :ios do
   lane :screenshots do
   capture_screenshots
   frame_screenshots()
+  slack(message: "Successfully created screenshots")
   end
   
   #build pour la beta, ne permet pas d'uploader vers app store ou test flight
@@ -40,14 +40,19 @@ platform :ios do
   sync_code_signing(type: "development", app_identifier: "mobiapps.GuildWar")
   build_app(scheme: "GuildWar", 
   	        export_method: "development")
+  slack(message: "Successfully build app")
   end
 
   # build en mode appstore en vue d'un déploiement testflight ou appstore
   lane :build_appstore do
-  get_certificates           # invokes cert
-  get_provisioning_profile   # invokes sigh
+  get_certificates(username: "william.tomas@mobiapps.fr", 
+                   team_id: "Z6N76HKP5Q")           # invokes cert
+  get_provisioning_profile(username: "william.tomas@mobiapps.fr", 
+                   team_id: "Z6N76HKP5Q",
+                   app_identifier: "com.mobiapps.William.GuildWar")    # invokes sigh
   build_app(scheme: "GuildWar", 
   	        export_method: "app-store")
+  slack(message: "Successfully created IPA")
   end
 
   #push sur testflight
