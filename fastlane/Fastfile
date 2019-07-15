@@ -1,0 +1,74 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+  end
+
+  #lance les tests sur l'application 
+  lane :tests do
+  run_tests(workspace: "GuildWar.xcworkspace",
+            devices: ["iPad Air 2"],
+            # slack_url: "https://hooks.slack.com/services/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",
+            scheme: "GuildWarUITests")
+  end
+
+  #prend des screenshots et les place dans le cadre de device adapté
+  lane :screenshots do
+  capture_screenshots
+  frame_screenshots()
+  end
+  
+  #build pour la beta, ne permet pas d'uploader vers app store ou test flight
+  lane :beta do
+  sync_code_signing(type: "development", app_identifier: "mobiapps.GuildWar")
+  build_app(scheme: "GuildWar", 
+  	        export_method: "development")
+  end
+
+  # build en mode appstore en vue d'un déploiement testflight ou appstore
+  lane :build_appstore do
+  get_certificates           # invokes cert
+  get_provisioning_profile   # invokes sigh
+  build_app(scheme: "GuildWar", 
+  	        export_method: "app-store")
+  end
+
+  #push sur testflight
+  lane :upload_testflight do
+  	pilot(
+  		username: "william.tomas@mobiapps.fr",
+        team_id: "16850801",
+        app_identifier: "com.mobiapps.William.GuildWar", 
+        skip_submission: true, 
+        skip_waiting_for_build_processing: false)
+    slack(message: "Successfully distributed a new build")
+  end
+
+  # error block is executed when a error occurs
+  error do |lane, exception|
+  slack(
+    # message with short human friendly message
+    message: exception.to_s, 
+    success: false, 
+    # Output containing extended log output
+    payload: { "Output" => exception.error_info.to_s } 
+  )
+  end
+end

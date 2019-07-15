@@ -6,17 +6,18 @@ target 'GuildWar' do
   use_frameworks!
 
   # Pods for GuildWar
-  pod 'Moya', '~> 13.0'
-  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Moya', '13.0'
 
   target 'GuildWarTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Moya', '13.0'
   end
 
   target 'GuildWarUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Moya', '13.0'
   end
 
 end
