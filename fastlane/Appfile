@@ -5,8 +5,8 @@
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
 
-app_identifer ("com.mobiapps.William.GuildWar")
-apple_id ("william.tomas@mobiapps.fr")
+app_identifier("com.mobiapps.William.GuildWar")
+apple_id("william.tomas@mobiapps.fr")
 
-team_id ("Z6N76HKP5Q")
-itc_team_id ("16850801")
+team_id("Z6N76HKP5Q")
+itc_team_id("16850801")

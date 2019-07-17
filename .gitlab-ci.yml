@@ -1,0 +1,22 @@
+stages:
+  - buildDebug
+
+variables:
+  LANG: "en_US.UTF-8"
+  LC_ALL: "en_US.UTF-8"
+
+buildDebug:
+  stage: buildDebug
+  tags:
+    - osx_hub
+  script:
+    - killall "Simulator" || echo "No matching processes belonging to you were found"
+    - fastlane clean
+    - pod repo update
+    - fastlane beta
+  only: 
+    - master
+  except:
+    - tags
+  
+

@@ -15,58 +15,146 @@
 
 default_platform(:ios)
 
+SLACK = "https://hooks.slack.com/services/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"
+WORKSPACE = "GuildWar.xcworkspace"
+SCHEME = "GuildWar"
+TEST_SCHEME = "GuildWarTests"
+UI_TEST_SCHEME = "GuildWarUITests"
+DEVICES = ["iPad Air 2"]
+APP_IDENTIFIER = "com.mobiapps.William.GuildWar"
+USERNAME = "william.tomas@mobiapps.fr"
+ITC_TEAM_ID = "16850801"
+TEAM_ID = "Z6N76HKP5Q"
+
+XCODE_TO_SELECT_FOR_TEST = "/Applications/Xcode.app"
+XCODE_TO_SELECT = "/Applications/Xcode.app"
+
 platform :ios do
 
   before_all do
-	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+	ENV["SLACK_URL"] = SLACK
+  ENV["TMP_KEYCHAIN_NAME"] = "tmpguildwarwilliam"
+  xcode_select XCODE_TO_SELECT
   end
 
-  #lance les tests sur l'application 
+  # ---------------------------------------------------------
+  # Keychain Handler, créé un keychain spécial pour le projet
+  # ---------------------------------------------------------
+  def ensure_temp_keychain(name)
+    delete_keychain(
+      name: name
+    ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
+    create_keychain(
+      name: name,
+      password: 'temppassword',
+      unlock: true,
+      timeout: false
+    )
+  end
+
+  # -----
+  # Match
+  # -----
+  def match_for_ci
+      match(
+        git_branch: "develop",
+        type: "development",
+        app_identifier: APP_IDENTIFIER,
+        team_id: TEAM_ID,
+        
+        keychain_name: ENV["TMP_KEYCHAIN_NAME"]
+      )
+  end
+
+  def toto
+      sync_code_signing(type: "development", 
+                    app_identifier: APP_IDENTIFIER,
+                    keychain_name: ENV["TMP_KEYCHAIN_NAME"])
+  end
+
+  desc "Sync the keys, certificates and profiles for all targets"
+  lane :certificates_ci do
+    ensure_temp_keychain ENV["TMP_KEYCHAIN_NAME"]
+    match_for_ci
+    #toto
+  end
+
+  # ---------------------------------
+  # lance les tests sur l'application 
+  # ---------------------------------
+  desc "tests"
   lane :tests do
-  run_tests(workspace: "GuildWar.xcworkspace",
-            devices: ["iPad Air 2"],
-            scheme: "GuildWarUITests")
+  run_tests(workspace: WORKSPACE,
+            devices: DEVICES,
+            scheme: UI_TEST_SCHEME)
   end
 
-  #prend des screenshots et les place dans le cadre de device adapté
+  # -----------------------------------------------------------------
+  # prend des screenshots et les place dans le cadre de device adapté
+  # -----------------------------------------------------------------
+  desc "screenshots"
   lane :screenshots do
   capture_screenshots
   frame_screenshots()
   slack(message: "Successfully created screenshots")
   end
   
-  #build pour la beta, ne permet pas d'uploader vers app store ou test flight
+  # --------------------------------------------------------------------------
+  # build pour la beta, ne permet pas d'uploader vers app store ou test flight
+  # --------------------------------------------------------------------------
+  desc "beta"
   lane :beta do
-  sync_code_signing(type: "development", app_identifier: "mobiapps.GuildWar")
-  build_app(scheme: "GuildWar", 
-  	        export_method: "development")
+  sync_code_signing(type: "development", 
+                    app_identifier: APP_IDENTIFIER,
+                    keychain_name: ENV["TMP_KEYCHAIN_NAME"])
+  gym(workspace: WORKSPACE,
+      scheme: SCHEME,
+      export_method: "development")
+
   slack(message: "Successfully build app")
   end
 
+  # ---------------------------------------------------------------------
   # build en mode appstore en vue d'un déploiement testflight ou appstore
+  # ---------------------------------------------------------------------
+  desc "build app store"
   lane :build_appstore do
-  get_certificates(username: "william.tomas@mobiapps.fr", 
-                   team_id: "Z6N76HKP5Q")           # invokes cert
-  get_provisioning_profile(username: "william.tomas@mobiapps.fr", 
-                   team_id: "Z6N76HKP5Q",
-                   app_identifier: "com.mobiapps.William.GuildWar")    # invokes sigh
-  build_app(scheme: "GuildWar", 
+  get_certificates   # invokes cert
+  get_provisioning_profile   # invokes sigh
+  build_app(scheme: SCHEME, 
   	        export_method: "app-store")
   slack(message: "Successfully created IPA")
   end
 
-  #push sur testflight
+  # -------------------
+  # push sur testflight
+  # -------------------
+  desc "upload testflight"
   lane :upload_testflight do
   	pilot(
-  		username: "william.tomas@mobiapps.fr",
-        team_id: "16850801",
-        app_identifier: "com.mobiapps.William.GuildWar", 
+  		  username: USERNAME,
+        team_id: ITC_TEAM_ID,
+        app_identifier: APP_IDENTIFIER, 
         skip_submission: true, 
         skip_waiting_for_build_processing: false)
     slack(message: "Successfully distributed a new build")
   end
 
+  # ----------------------------------------
+  # clean le projet, utile avant build en CI
+  # ----------------------------------------
+  desc "clean"
+  lane :clean do
+    clear_derived_data
+    xcclean(
+      workspace: WORKSPACE,
+      scheme: SCHEME
+    )
+  end
+
+  # -------------------------------------------
   # error block is executed when a error occurs
+  # -------------------------------------------
   error do |lane, exception|
   slack(
     # message with short human friendly message
