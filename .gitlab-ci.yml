@@ -1,5 +1,5 @@
 stages:
-  - buildDebug
+  - build
 
 variables:
   LANG: "en_US.UTF-8"
