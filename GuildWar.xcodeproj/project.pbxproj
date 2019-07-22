@@ -742,6 +742,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobiapps.ScreenshotsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = "com.mobiapps.William.GuildWar AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GuildWar;
@@ -761,6 +763,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobiapps.ScreenshotsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = "com.mobiapps.William.GuildWar AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GuildWar;
@@ -898,7 +902,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps.William.GuildWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.mobiapps.William.GuildWar";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = DevGuildWarWilliam;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -919,7 +924,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps.William.GuildWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.mobiapps.William.GuildWar";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = DevGuildWarWilliam;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -941,6 +947,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobiapps.GuildWarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = "com.mobiapps.William.GuildWar AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuildWar.app/GuildWar";
@@ -963,6 +971,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobiapps.GuildWarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = "com.mobiapps.William.GuildWar AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuildWar.app/GuildWar";
@@ -984,6 +994,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobiapps.GuildWarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = "com.mobiapps.William.GuildWar AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GuildWar;
@@ -1005,6 +1017,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobiapps.GuildWarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34d5df90-fa3e-4f9d-addc-729ca4288379";
+				PROVISIONING_PROFILE_SPECIFIER = "com.mobiapps.William.GuildWar AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GuildWar;

@@ -25,15 +25,29 @@ APP_IDENTIFIER = "com.mobiapps.William.GuildWar"
 USERNAME = "william.tomas@mobiapps.fr"
 ITC_TEAM_ID = "16850801"
 TEAM_ID = "Z6N76HKP5Q"
+KEYCHAIN_PWD = "temppassword"
 
 XCODE_TO_SELECT_FOR_TEST = "/Applications/Xcode.app"
 XCODE_TO_SELECT = "/Applications/Xcode.app"
 
 platform :ios do
 
+
   before_all do
+  ENV["MATCH-PASSWORD"] = "mobiapps"
 	ENV["SLACK_URL"] = SLACK
   ENV["TMP_KEYCHAIN_NAME"] = "tmpguildwarwilliam"
+
+  ENV["FASTFILE_DIR"] =  File.expand_path(File.dirname(File.dirname(__FILE__)))
+  ENV["PATH_XCODEPROJ"] = ENV["FASTFILE_DIR"]+"/../GuildWar.xcodeproj"
+  ENV["PATH_CERT"] = ENV["FASTFILE_DIR"]+"/cert"
+  ENV["PATH_CERT_DEV"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/dev_william.p12"
+  ENV["PATH_CERT_DEV_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/ios_development.cer"
+  ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificates_distribution_mobiapps.p12"
+  ENV["PATH_PROV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/*.mobileprovision"
+  ENV["PATH_PROV_DEV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/Development_com.mobiapps.William.GuildWar.mobileprovision"
+  ENV["PATH_PROV_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/profiles/commobiappsWilliamGuildWar_AppStore-2.mobileprovision"
+
   xcode_select XCODE_TO_SELECT
   end
 
@@ -43,40 +57,75 @@ platform :ios do
   def ensure_temp_keychain(name)
     delete_keychain(
       name: name
-    ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
+    ) if File.exist? File.expand_path("~/Library/Keychains/#{name}")
     create_keychain(
       name: name,
-      password: 'temppassword',
+      password: KEYCHAIN_PWD,
       unlock: true,
       timeout: false
     )
   end
 
-  # -----
-  # Match
-  # -----
-  def match_for_ci
-      match(
-        git_branch: "develop",
-        type: "development",
-        app_identifier: APP_IDENTIFIER,
-        team_id: TEAM_ID,
-        
-        keychain_name: ENV["TMP_KEYCHAIN_NAME"]
-      )
+  # -----------------------------------------
+  # Importe le repo git contenant les certifs
+  # -----------------------------------------
+  def import_git
+    sh "git clone https://git.mobiapps.fr/william.tomas/cert.git"
   end
 
-  def toto
-      sync_code_signing(type: "development", 
-                    app_identifier: APP_IDENTIFIER,
-                    keychain_name: ENV["TMP_KEYCHAIN_NAME"])
+  # ---------------------------------------
+  # Importe les certificats dans le keychain
+  # ---------------------------------------
+  def import_cert
+    import_certificate(keychain_name: ENV["TMP_KEYCHAIN_NAME"],
+                       certificate_path: ENV["PATH_CERT_DEV"],
+                       certificate_password: ""
+
+    )
+    import_certificate(keychain_name: ENV["TMP_KEYCHAIN_NAME"],
+                       certificate_path: ENV["PATH_CERT_DISTRI"],
+                       certificate_password: "wil"
+    )
+  end
+
+
+
+  # ---------------------------------------------------------
+  # Importe les provisionning profiles sur la machine de build
+  # ---------------------------------------------------------
+  def import_prov
+    sh "/Users/williamtomas/Documents/Dev/guildwar/fastlane/import_prov.sh " + ENV["PATH_PROV"]
+  end
+
+  def changer_prov(type)   # TODO
+    if type == "distribution"
+    update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
+                                profile: ENV["PATH_PROV_DISTRI"],
+                                certificate: ENV["PATH_CERT_DEV_2"]
+    )
+    else
+    update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
+                                profile: ENV["PATH_PROV_DEV"],
+                                build_configuration: "Debug"
+    )
+    end
+  end
+
+  def delete_git
+    sh "rm -r " + ENV["PATH_CERT"]
   end
 
   desc "Sync the keys, certificates and profiles for all targets"
   lane :certificates_ci do
     ensure_temp_keychain ENV["TMP_KEYCHAIN_NAME"]
-    match_for_ci
-    #toto
+    sh "fastlane clean"
+    import_git
+    import_cert
+    import_prov
+    changer_prov "neta"
+    sh "fastlane beta"
+    #sh "fastlane build_appstore"
+    delete_git
   end
 
   # ---------------------------------
@@ -104,9 +153,6 @@ platform :ios do
   # --------------------------------------------------------------------------
   desc "beta"
   lane :beta do
-  sync_code_signing(type: "development", 
-                    app_identifier: APP_IDENTIFIER,
-                    keychain_name: ENV["TMP_KEYCHAIN_NAME"])
   gym(workspace: WORKSPACE,
       scheme: SCHEME,
       export_method: "development")
@@ -119,10 +165,9 @@ platform :ios do
   # ---------------------------------------------------------------------
   desc "build app store"
   lane :build_appstore do
-  get_certificates   # invokes cert
-  get_provisioning_profile   # invokes sigh
-  build_app(scheme: SCHEME, 
-  	        export_method: "app-store")
+  gym(workspace: WORKSPACE,
+      scheme: SCHEME,
+      export_method: "app-store")
   slack(message: "Successfully created IPA")
   end
 
