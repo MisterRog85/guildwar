@@ -6,16 +6,16 @@ variables:
   LC_ALL: "en_US.UTF-8"
 
 buildDebug:
-  stage: buildDebug
+  stage: build
   tags:
     - osx_hub
   script:
     - killall "Simulator" || echo "No matching processes belonging to you were found"
-    - fastlane clean
     - pod repo update
-    - fastlane beta
+    - fastlane certificates_ci
   only: 
-    - master
+    - max
+    - appstore
   except:
     - tags
   
