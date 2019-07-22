@@ -122,9 +122,9 @@ platform :ios do
     import_git
     import_cert
     import_prov
-    changer_prov "neta"
-    sh "fastlane beta"
-    #sh "fastlane build_appstore"
+    #changer_prov "neta"
+    #sh "fastlane beta"
+    sh "fastlane build_appstore"
     delete_git
   end
 
