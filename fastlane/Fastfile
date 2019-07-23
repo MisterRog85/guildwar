@@ -94,7 +94,7 @@ platform :ios do
   # Importe les provisionning profiles sur la machine de build
   # ---------------------------------------------------------
   def import_prov
-    sh "/Users/williamtomas/Documents/Dev/guildwar/fastlane/import_prov.sh " + ENV["PATH_PROV"]
+    sh ENV["FASTFILE_DIR"] + "/import_prov.sh " + ENV["PATH_PROV"]
   end
 
   def changer_prov(type)   # TODO
