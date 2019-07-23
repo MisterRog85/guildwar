@@ -97,11 +97,11 @@ platform :ios do
     sh ENV["FASTFILE_DIR"] + "/import_prov.sh " + ENV["PATH_PROV"]
   end
 
-  def changer_prov(type)   # TODO
+  def changer_prov(type)   
     if type == "distribution"
     update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
                                 profile: ENV["PATH_PROV_DISTRI"],
-                                certificate: ENV["PATH_CERT_DEV_2"]
+                                build_configuration: "Release"
     )
     else
     update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
@@ -122,7 +122,7 @@ platform :ios do
     import_git
     import_cert
     import_prov
-    #changer_prov "neta"
+    changer_prov "distribution"
     #sh "fastlane beta"
     sh "fastlane build_appstore"
     delete_git
