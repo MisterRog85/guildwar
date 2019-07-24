@@ -32,7 +32,6 @@ XCODE_TO_SELECT = "/Applications/Xcode.app"
 
 platform :ios do
 
-
   before_all do
   ENV["MATCH-PASSWORD"] = "mobiapps"
 	ENV["SLACK_URL"] = SLACK
@@ -42,9 +41,7 @@ platform :ios do
   ENV["PATH_XCODEPROJ"] = ENV["FASTFILE_DIR"]+"/../GuildWar.xcodeproj"
   ENV["PATH_CERT"] = ENV["FASTFILE_DIR"]+"/cert"
   ENV["PATH_CERT_DEV"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/dev_william.p12"
-  ENV["PATH_CERT_DEV_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/ios_development.cer"
   ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificat-William-distri.p12"
-  ENV["PATH_CERT_DISTRI_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/william_distribution.cer"
   ENV["PATH_PROV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/*.mobileprovision"
   ENV["PATH_PROV_DEV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/Development_com.mobiapps.William.GuildWar.mobileprovision"
   ENV["PATH_PROV_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/profiles/commobiappsWilliamGuildWar_AppStore-2.mobileprovision"
@@ -74,30 +71,33 @@ platform :ios do
     sh "git clone https://git.mobiapps.fr/william.tomas/cert.git"
   end
 
-  # ---------------------------------------
+  # ----------------------------------------
   # Importe les certificats dans le keychain
-  # ---------------------------------------
+  # ----------------------------------------
   def import_cert
     import_certificate(keychain_name: ENV["TMP_KEYCHAIN_NAME"],
+                       keychain_password: KEYCHAIN_PWD,
                        certificate_path: ENV["PATH_CERT_DEV"],
                        certificate_password: ""
 
     )
     import_certificate(keychain_name: ENV["TMP_KEYCHAIN_NAME"],
+                       keychain_password: KEYCHAIN_PWD,
                        certificate_path: ENV["PATH_CERT_DISTRI"],
                        certificate_password: ""
     )
   end
 
-
-
-  # ---------------------------------------------------------
+  # ----------------------------------------------------------
   # Importe les provisionning profiles sur la machine de build
-  # ---------------------------------------------------------
+  # ----------------------------------------------------------
   def import_prov
     sh ENV["FASTFILE_DIR"] + "/import_prov.sh " + ENV["PATH_PROV"]
   end
 
+  # -----------------------------------------
+  # Changer le provisionning profil du projet
+  # -----------------------------------------
   def changer_prov(type)   
     if type == "distribution"
     update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
@@ -112,10 +112,16 @@ platform :ios do
     end
   end
 
+  # --------------------------------------------------------------------------
+  # Supprime le répertoire contenant les certificats une fois le build terminé
+  # --------------------------------------------------------------------------
   def delete_git
     sh "rm -r " + ENV["PATH_CERT"]
   end
 
+  # ----------------------
+  # Lane appelée par la CI
+  # ----------------------
   desc "Sync the keys, certificates and profiles for all targets"
   lane :certificates_ci do
     ensure_temp_keychain ENV["TMP_KEYCHAIN_NAME"]
