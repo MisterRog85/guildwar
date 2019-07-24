@@ -43,8 +43,8 @@ platform :ios do
   ENV["PATH_CERT"] = ENV["FASTFILE_DIR"]+"/cert"
   ENV["PATH_CERT_DEV"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/dev_william.p12"
   ENV["PATH_CERT_DEV_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/ios_development.cer"
-  ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificates_distribution_mobiapps.p12"
-  ENV["PATH_CERT_DISTRI_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/ios_distribution.cer"
+  ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificate-William-15/07.p12"
+  #ENV["PATH_CERT_DISTRI_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/ios_distribution.cer"
   ENV["PATH_PROV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/*.mobileprovision"
   ENV["PATH_PROV_DEV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/Development_com.mobiapps.William.GuildWar.mobileprovision"
   ENV["PATH_PROV_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/profiles/commobiappsWilliamGuildWar_AppStore-2.mobileprovision"
@@ -102,8 +102,7 @@ platform :ios do
     if type == "distribution"
     update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
                                 profile: ENV["PATH_PROV_DISTRI"],
-                                build_configuration: "Release",
-                                certificate: ENV["PATH_CERT_DISTRI_2"]
+                                build_configuration: "Release"
     )
     else
     update_project_provisioning(xcodeproj: ENV["PATH_XCODEPROJ"],
