@@ -1,5 +1,5 @@
-git_url("https://git.mobiapps.fr/william.tomas/fastlanemanuel.git")
-storage_mode("git")
+#git_url("https://git.mobiapps.fr/william.tomas/fastlanemanuel.git")
+#storage_mode("git")
 
 # type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
