@@ -44,7 +44,7 @@ platform :ios do
   ENV["PATH_CERT_DEV"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/dev_william.p12"
   ENV["PATH_CERT_DEV_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/ios_development.cer"
   ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificat-William-distri.p12"
-  #ENV["PATH_CERT_DISTRI_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/ios_distribution.cer"
+  ENV["PATH_CERT_DISTRI_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/william_distribution.cer"
   ENV["PATH_PROV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/*.mobileprovision"
   ENV["PATH_PROV_DEV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/Development_com.mobiapps.William.GuildWar.mobileprovision"
   ENV["PATH_PROV_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/profiles/commobiappsWilliamGuildWar_AppStore-2.mobileprovision"
@@ -85,7 +85,7 @@ platform :ios do
     )
     import_certificate(keychain_name: ENV["TMP_KEYCHAIN_NAME"],
                        certificate_path: ENV["PATH_CERT_DISTRI"],
-                       certificate_password: "wil"
+                       certificate_password: ""
     )
   end
 
