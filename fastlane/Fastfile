@@ -43,7 +43,7 @@ platform :ios do
   ENV["PATH_CERT"] = ENV["FASTFILE_DIR"]+"/cert"
   ENV["PATH_CERT_DEV"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/dev_william.p12"
   ENV["PATH_CERT_DEV_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/development/ios_development.cer"
-  ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificate-William-15/07.p12"
+  ENV["PATH_CERT_DISTRI"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/Certificat-William-15/07.p12"
   #ENV["PATH_CERT_DISTRI_2"] = ENV["FASTFILE_DIR"]+"/cert/certs/appstore/ios_distribution.cer"
   ENV["PATH_PROV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/*.mobileprovision"
   ENV["PATH_PROV_DEV"] = ENV["FASTFILE_DIR"]+"/cert/profiles/Development_com.mobiapps.William.GuildWar.mobileprovision"
