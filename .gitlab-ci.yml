@@ -12,7 +12,7 @@ buildDebug:
   script:
     - killall "Simulator" || echo "No matching processes belonging to you were found"
     - pod repo update
-    - fastlane certificates_ci
+    - fastlane build_ci
   only: 
     - max
     - appstore
